@@ -1,0 +1,58 @@
+.more-info {
+  padding: 15.5rem 0;
+
+  &__container {
+    max-width: calc(192rem + var(--container-offset) * 2);
+    position: relative;
+    padding: 8rem 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  &__content {
+    padding: 5.5rem 6rem;
+    background-color: var(--bereg-white);
+    min-width: 73.2rem;
+  }
+  &__title {
+    max-width: 57rem;
+    margin: 0 auto;
+    margin-bottom: 3.6rem;
+  }
+  &__img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    mask-image: url("./../img/svg/more-info-mask.svg");
+    mask-size: cover;
+    mask-repeat: no-repeat;
+    mask-position: center;
+
+    min-height: 48.6rem;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    width: 100%;
+    padding: 1.6rem 1rem 1.4rem;
+    position: relative;
+
+    &::after {
+      width: 23.7%;
+      height: 0.8rem;
+      mask-image: url("./../img/svg/more-btn-mask.svg");
+      mask-size: contain;
+      mask-position: top;
+    }
+  }
+}

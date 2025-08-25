@@ -1,0 +1,44 @@
+.cta {
+  padding: 9.5rem 0;
+  padding-bottom: 15.4rem;
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &__content {
+    padding: 9.2rem 10rem 10rem;
+    background-color: var(--bereg-white);
+  }
+
+  &__title {
+    margin-bottom: 3.4rem;
+  }
+  &__desc {
+    margin: 0;
+    font-weight: 400;
+    margin-bottom: 4rem;
+  }
+
+  &__form {
+    margin-bottom: 4.8rem;
+  }
+
+  &__extra {
+    font-style: normal;
+    font-weight: 400;
+    p {
+      margin: 0;
+    }
+    a {
+      color: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+    }
+  }
+
+  &__map {
+    background-color: #ccc;
+  }
+}

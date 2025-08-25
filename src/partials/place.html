@@ -1,0 +1,283 @@
+<section class="place">
+  <div class="container">
+    <h2 class="title-xl centered place__title">Расположение</h2>
+  </div>
+  <div class="place__map" id="map">
+    <div class="place__content place-content">
+      <div class="place-content__img">
+        <img src="./img/place.webp" alt="" />
+      </div>
+      <div class="place-content__content">
+        <p class="place-content__address">
+          Приморский край, Надеждинский район, пос. Тавричанка, ул. 60 лет ВЛКСМ
+        </p>
+
+        <form class="place-content__form place-form">
+          <input
+            type="text"
+            placeholder="Введите ваш адрес"
+            class="place-form__input"
+            id="address"
+            autocomplete="off"
+          />
+          <div id="suggestions"></div>
+          <button
+            class="btn-reset btn btn_small place-form__btn btn_gray"
+            disabled
+          >
+            Проложить маршрут
+          </button>
+        </form>
+        <div class="place-content__buttons">
+          <button class="btn-reset place-content__btn btn btn_gray btn_small">
+            Яндекс Карты
+          </button>
+          <button class="btn-reset place-content__btn btn btn_gray btn_small">
+            Google Maps
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div id="zoom-controls" class="custom-zoom-container">
+      <button id="zoom-in" class="custom-zoom-button">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1.5 9H16.5M9 1.5V16.5" stroke="black" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
+      <button id="zoom-out" class="custom-zoom-button">
+        <svg width="18" height="3" viewBox="0 0 18 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1.5 1.66663H16.5" stroke="black" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
+    </div> -->
+  </div>
+</section>
+<script>
+  ymaps.ready(function () {
+    const ourCompany = [43.109836, 132.349806];
+    let suggestionsDiv = document.getElementById("suggestions");
+    let activeIndex = -1;
+    let markers = [];
+    let multiRoute;
+    var myMap = new ymaps.Map(
+        "map",
+        {
+          center: ourCompany,
+          zoom: 14,
+        },
+        {
+          searchControlProvider: "yandex#search",
+        }
+      ),
+      myPlacemark = new ymaps.Placemark(
+        myMap.getCenter(),
+        {},
+        {
+          iconLayout: "default#image",
+          iconImageHref: "./img/svg/marker.svg",
+          iconImageSize: [60, 60],
+          iconImageOffset: [0, -34],
+        }
+      );
+
+    myMap.geoObjects.add(myPlacemark);
+    myMap.controls.remove("geolocationControl"); // удаляем геолокацию
+    myMap.controls.remove("searchControl"); // удаляем поиск
+    myMap.controls.remove("trafficControl"); // удаляем контроль трафика
+    myMap.controls.remove("typeSelector"); // удаляем тип
+    myMap.controls.remove("fullscreenControl"); // удаляем кнопку перехода в полноэкранный режим
+    myMap.controls.remove("zoomControl"); // удаляем контрол зуммирования
+    myMap.controls.remove("rulerControl"); // удаляем контрол правил
+    // myMap.behaviors.disable(["scrollZoom"]); // отключаем скролл карты (опционально)
+    const placeForm = document.querySelector(".place-form");
+
+    var zoomInButton = document.getElementById("zoom-in");
+    var zoomOutButton = document.getElementById("zoom-out");
+
+    // // Обработчики событий для кнопок
+    // zoomInButton.addEventListener("click", function () {
+    //   var currentZoom = myMap.getZoom();
+    //   if (currentZoom < 19) {
+    //     // максимальный zoom
+    //     myMap.setZoom(currentZoom + 1);
+    //   }
+    // });
+
+    // zoomOutButton.addEventListener("click", function () {
+    //   var currentZoom = myMap.getZoom();
+    //   if (currentZoom > 0) {
+    //     // минимальный zoom
+    //     myMap.setZoom(currentZoom - 1);
+    //   }
+    // });
+    if (placeForm) {
+      const input = placeForm.querySelector(".place-form__input");
+      const btn = placeForm.querySelector(".place-form__btn");
+      const ourAddressPlacemark = [];
+      function checkDisabled() {
+        if (input.value !== "") {
+          btn.removeAttribute("disabled");
+        } else {
+          btn.setAttribute("disabled", "");
+        }
+      }
+      input.addEventListener("input", () => {
+        checkDisabled();
+        let query = input.value;
+
+        if (query.length < 3) {
+          suggestionsDiv.style.display = "none";
+          return;
+        }
+        query = "Владивосток, " + query;
+        fetch(
+          "https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: "Token 4d19c67436fb1dd506158003fd2c419d4f6155a0", // Замените на ваш токен
+            },
+            body: JSON.stringify({ query }),
+          }
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            suggestionsDiv.innerHTML = "";
+            if (data.suggestions.length) {
+              suggestionsDiv.style.display = "block";
+              data.suggestions.forEach((suggestion, index) => {
+                const item = document.createElement("div");
+                item.dataset.suggestion = JSON.stringify(suggestion);
+                // Вывод короткого адреса
+                const shortAddress = suggestion.value;
+
+                item.textContent = shortAddress; // Отображаем адрес
+                item.classList.add("suggestion-item");
+
+                // Клик по подсказке
+                item.addEventListener("click", function () {
+                  selectSuggestion(suggestion);
+                });
+                item.dataset.index = index;
+                suggestionsDiv.appendChild(item);
+              });
+            } else {
+              suggestionsDiv.style.display = "none";
+            }
+          })
+          .catch((error) => console.error("Ошибка:", error));
+      });
+
+      input.addEventListener("keydown", function (event) {
+        const items = suggestionsDiv.getElementsByClassName("suggestion-item");
+
+        if (event.key === "ArrowDown") {
+          activeIndex = (activeIndex + 1) % items.length; // Переход к следующему элементу
+          updateActiveItem(items);
+        } else if (event.key === "ArrowUp") {
+          activeIndex = (activeIndex - 1 + items.length) % items.length; // Переход к предыдущему элементу
+          updateActiveItem(items);
+        } else if (event.key === "Enter" && activeIndex > -1) {
+          event.preventDefault();
+          selectSuggestion(JSON.parse(items[activeIndex].dataset.suggestion)); // Используем JSON для хранения объекта
+        }
+      });
+
+      function addMarker(coords, name) {
+        const placemark = new ymaps.Placemark(coords, { balloonContent: name });
+        myMap.geoObjects.add(placemark);
+        markers.push(placemark); // Сохраняем метку в массив
+      }
+
+      function addRoute(startCoords, endCoords) {
+        multiRoute = new ymaps.multiRouter.MultiRoute(
+          {
+            referencePoints: [startCoords, endCoords],
+          },
+          {
+            results: 1,
+            routeStrokeWidth: 5,
+            routeStrokeColor: "#FF6B00",
+            routeActiveStrokeColor: "#FF6B00",
+            routePedestrianSegmentStrokeColor: "#FF6B00",
+            routeActivePedestrianSegmentStrokeColor: "#FF6B00",
+          }
+        );
+
+        myMap.geoObjects.add(multiRoute);
+      }
+
+      function selectSuggestion(suggestion) {
+        input.value = suggestion.value;
+        suggestionsDiv.style.display = "none";
+
+        const coordinates = {
+          lat: suggestion.data.geo_lat, // Широта
+          lon: suggestion.data.geo_lon, // Долгота
+        };
+        ourAddressPlacemark[0] = coordinates;
+      }
+
+      function clearMap(exceptMarker) {
+        // Удаление всех меток
+        markers.forEach((marker) => {
+          if (marker !== exceptMarker) {
+            myMap.geoObjects.remove(marker);
+          }
+        });
+
+        // Очистка маршрутов
+        if (multiRoute) {
+          myMap.geoObjects.remove(multiRoute);
+        }
+      }
+
+      function updateActiveItem(items) {
+        [...items].forEach((item) => {
+          item.classList.remove("active"); // Убираем класс активности у всех элементов
+        });
+        if (items[activeIndex]) {
+          items[activeIndex].classList.add("active"); // Добавляем класс к активному элементу
+        }
+      }
+      document.addEventListener("click", function (event) {
+        if (!suggestionsDiv.contains(event.target)) {
+          suggestionsDiv.style.display = "none";
+        }
+      });
+      input.addEventListener("focus", checkDisabled);
+      input.addEventListener("focusout", checkDisabled);
+      input.addEventListener("change", checkDisabled);
+
+      placeForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        let serachingAddress = input.value;
+        if (input.value.indexOf("Владивосток") == -1)
+          serachingAddress = "Владивосток," + input.value;
+        fetch(
+          `https://nominatim.openstreetmap.org/search?q=${serachingAddress}&format=json`
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.length > 1 && !ourAddressPlacemark[0]) {
+              const { lat, lon } = data[0];
+              ourAddressPlacemark[0] = { lat, lon };
+            }
+
+            clearMap(null);
+            addMarker(
+              [ourAddressPlacemark[0].lat, ourAddressPlacemark[0].lon],
+              ""
+            );
+
+            addRoute(ourCompany, [
+              ourAddressPlacemark[0].lat,
+              ourAddressPlacemark[0].lon,
+            ]);
+          });
+      });
+    }
+  });
+</script>

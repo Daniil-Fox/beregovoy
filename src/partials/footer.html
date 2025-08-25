@@ -1,0 +1,133 @@
+<footer class="footer">
+  <svg
+    width="929"
+    height="35"
+    viewBox="0 0 929 35"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    class="wave"
+  >
+    <path
+      d="M929 35.0047C619 35.0047 695 0.00488281 441.801 0.00488281C207 0.00488282 281.304 35.0047 0.200195 35.0047H929Z"
+      fill="#FEFEFE"
+    />
+  </svg>
+
+  <div class="container">
+    <div class="footer__container">
+      <div class="footer__left">
+        <div class="footer__col">
+          <div class="footer__capture subtitle-xl">Отдел продаж</div>
+          <address class="footer__address footer-add">
+            <a href="tel:+7 914 068 84 48" class="footer-add__link">
+              +7 914 068 84 48
+            </a>
+            <a href="mailto:sz-beregovoi@mail.ru" class="footer-add__link"
+              >sz-beregovoi@mail.ru</a
+            >
+            <p class="footer-add__link">
+              Владивосток, Боль­шой ка­мень, ул. Кар­ла Мар­кса, д.31, офис 1
+            </p>
+            <p class="footer-add__link">Пн - Пт с 9:00 до 18:00</p>
+          </address>
+          <div class="footer__map" id="footer-map"></div>
+        </div>
+
+        <div class="footer__col">
+          <div class="footer__capture subtitle-xl">Навигация по сайту</div>
+
+          <nav class="footer__nav nav">
+            <ul class="list-reset nav__list">
+              <li class="nav__item">
+                <a href="#" class="nav__link">Галерея</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Новости</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Ход строительства</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Квартиры</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <div class="footer__right">
+        <a href="./" class="footer__logo">
+          <img src="./img/logo.svg" alt="" />
+        </a>
+        <ul class="footer__socials list-reset">
+          <li>
+            <a href="#" target="_blank" class="soc">
+              <img src="./img/whatsapp.webp" alt="" />
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank" class="soc">
+              <img src="./img/tel.webp" alt="" />
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank" class="soc">
+              <img src="./img/insta.webp" alt="" />
+            </a>
+          </li>
+        </ul>
+        <div class="footer__block">
+          <a href="#" class="footer-add__link"> Политика конфиденциальности </a>
+          <a href="#" class="footer-add__link">Документация</a>
+        </div>
+
+        <div class="footer__block">
+          <small>Информация на сайте не является публичной офертой</small>
+          <small>©2025 ЖК "Береговой"</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+  ymaps.ready(function () {
+    const ourCompany = [43.109836, 132.349806];
+    let activeIndex = -1;
+    let markers = [];
+    let multiRoute;
+    var myMap = new ymaps.Map(
+        "footer-map",
+        {
+          center: ourCompany,
+          zoom: 14,
+        },
+        {
+          searchControlProvider: "yandex#search",
+        }
+      ),
+      myPlacemark = new ymaps.Placemark(
+        myMap.getCenter(),
+        {},
+        {
+          iconLayout: "default#image",
+          iconImageHref: "./img/placemark-footer.svg",
+          iconImageSize: [30, 30],
+          iconImageOffset: [0, -34],
+        }
+      );
+
+    myMap.geoObjects.add(myPlacemark);
+
+    myMap.controls.remove("geolocationControl"); // удаляем геолокацию
+    myMap.controls.remove("searchControl"); // удаляем поиск
+    myMap.controls.remove("trafficControl"); // удаляем контроль трафика
+    myMap.controls.remove("typeSelector"); // удаляем тип
+    myMap.controls.remove("fullscreenControl"); // удаляем кнопку перехода в полноэкранный режим
+    myMap.controls.remove("zoomControl"); // удаляем контрол зуммирования
+    myMap.controls.remove("rulerControl"); // удаляем контрол правил
+    myMap.behaviors.disable(["scrollZoom"]); // отключаем скролл карты (опционально)
+  });
+</script>

@@ -1,0 +1,128 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  --gap: -0.5rem;
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+  }
+  &__field {
+    display: block;
+    width: 100%;
+    position: relative;
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+    @include hover {
+      input:not(:disabled) ~ .form__label {
+        color: rgba(0, 0, 0, 0.45);
+      }
+    }
+
+    &-wrapper {
+      height: 6rem;
+      position: relative;
+      outline: 2px solid transparent;
+      padding: 1.5rem 3rem;
+      background-color: #fafafa;
+      // outline-offset: -2px;
+      font-weight: 400;
+      font-size: 2rem;
+      line-height: 150%;
+      overflow: hidden;
+      transition: color 0.3s ease-out, background-color 0.3s ease-out,
+        outline-color 0.3s ease-in;
+      &--area {
+        height: 14rem;
+      }
+    }
+
+    &.filled {
+      .form__label {
+        font-size: 1.4rem;
+        transform: translateY(var(--gap));
+      }
+      .form__input {
+        transform: translateY(-32%);
+
+        &--area {
+          transform: none;
+        }
+      }
+    }
+    &.focus {
+      .form__field-wrapper {
+        outline-color: #000;
+        background-color: #fff;
+      }
+      .form__label {
+        background-color: #fff;
+      }
+    }
+  }
+
+  &__label {
+    position: absolute;
+    z-index: 4;
+    background-color: #fafafa;
+    width: 100%;
+    top: 0;
+    padding-top: 1.4rem;
+    left: 3rem;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 150%;
+    color: rgba(0, 0, 0, 0.25);
+    transition: color 0.3s ease-out;
+    transition: transform 0.3s ease-in, font-size 0.3s ease-in,
+      background-color 0.3s ease-in;
+  }
+
+  &__input {
+    display: block;
+    position: absolute;
+    padding: 1.5rem 3rem;
+    height: 100%;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    border: none;
+    background: none;
+    transition: transform 0.3s ease-in, background-color 0.3s ease-in;
+    &:focus {
+      outline: none;
+      transform: translateY(-32%);
+
+      & ~ .form__label {
+        font-size: 1.4rem;
+        transform: translateY(var(--gap));
+      }
+    }
+    &:disabled {
+      cursor: not-allowed;
+      touch-action: none;
+      background-color: #e3e6e6;
+    }
+    &--area {
+      height: 100%;
+      resize: none;
+      top: 0;
+      transform: none;
+      padding-top: 3rem;
+      &:focus {
+        transform: none;
+      }
+    }
+  }
+
+  &__btn {
+    display: flex;
+    width: 100%;
+    padding: 1.7rem 1rem 1.4rem;
+
+    &::after {
+      width: 22%;
+    }
+  }
+}

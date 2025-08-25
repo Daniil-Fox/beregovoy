@@ -1,0 +1,91 @@
+<section class="cta">
+  <div class="container">
+    <div class="cta__container">
+      <div class="cta__content">
+        <h2 class="title-xl cta__title">Связаться с&nbsp;нами</h2>
+        <p class="desc2 cta__desc">
+          Задайте любые интересующие вас вопросы менеджеру.
+        </p>
+
+        <form action="#" class="form cta__form">
+          <div class="form__field">
+            <div class="form__field-wrapper">
+              <input
+                id="name"
+                type="text"
+                class="form__input input-name"
+                name="Имя"
+              />
+              <label for="name" class="form__label">Ваше имя</label>
+            </div>
+          </div>
+          <div class="form__field">
+            <div class="form__field-wrapper">
+              <input
+                id="tel"
+                type="tel"
+                class="form__input input-name"
+                name="Телефон"
+              />
+              <label for="tel" class="form__label">Ваш телефон</label>
+            </div>
+          </div>
+          <button class="btn-reset btn btn_masked form__btn" disabled>
+            оставить заявку
+          </button>
+        </form>
+        <address class="cta__extra desc2">
+          <p>Отдел продаж</p>
+          <p>
+            <a href="tel:+7 (914) 068-84-48 " class="link-btn">
+              +7 (914) 068-84-48
+            </a>
+          </p>
+          <p>Боль­шой ка­мень, ул. Кар­ла Мар­кса, д.31, офис 1</p>
+        </address>
+      </div>
+
+      <div class="cta__map" id="#map2"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+  ymaps.ready(function () {
+    const ourCompany = [43.109836, 132.349806];
+    let activeIndex = -1;
+    let markers = [];
+    let multiRoute;
+    var myMap = new ymaps.Map(
+        "#map2",
+        {
+          center: ourCompany,
+          zoom: 14,
+        },
+        {
+          searchControlProvider: "yandex#search",
+        }
+      ),
+      myPlacemark = new ymaps.Placemark(
+        myMap.getCenter(),
+        {},
+        {
+          iconLayout: "default#image",
+          iconImageHref: "./img/svg/marker.svg",
+          iconImageSize: [60, 60],
+          iconImageOffset: [0, -34],
+        }
+      );
+
+    myMap.geoObjects.add(myPlacemark);
+    myMap.controls.remove("geolocationControl"); // удаляем геолокацию
+    myMap.controls.remove("searchControl"); // удаляем поиск
+    myMap.controls.remove("trafficControl"); // удаляем контроль трафика
+    myMap.controls.remove("typeSelector"); // удаляем тип
+    myMap.controls.remove("fullscreenControl"); // удаляем кнопку перехода в полноэкранный режим
+    myMap.controls.remove("zoomControl"); // удаляем контрол зуммирования
+    myMap.controls.remove("rulerControl"); // удаляем контрол правил
+    // myMap.behaviors.disable(["scrollZoom"]); // отключаем скролл карты (опционально)
+    const placeForm = document.querySelector(".place-form");
+  });
+</script>

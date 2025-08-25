@@ -1,0 +1,20 @@
+:root {
+  --font-family: "Geist", sans-serif;
+  --second-family: "Golos Text", sans-serif;
+  --third-family: "Geologica", sans-serif;
+  --content-width: 180rem;
+  --container-offset: 2rem;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+  --bereg-accent: #534cab;
+  --bereg-violet: #534cab;
+  --bereg-black: #050220;
+  --bereg-white: #fefefe;
+  --bereg-30black: #fff;
+  --grey1: #fefefe;
+  --grey2: #fefefe;
+  --grey3: #fefefe;
+  --grey4: #fefefe;
+  --exp: #f7f6ff;
+  --btn-hover: #7570bc;
+}

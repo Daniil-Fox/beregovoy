@@ -1,0 +1,98 @@
+.possible {
+  padding: 10.8rem 0;
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 9.1rem;
+  }
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 4rem;
+  }
+
+  &__slider {
+    grid-column: 7 span;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    max-width: 100%;
+    background-color: var(--bereg-white);
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      top: calc(100% - 1px);
+      right: 0;
+      height: 3rem;
+      width: 100%;
+      background-image: url("./../img/svg/possible-mask-bottom.svg");
+      background-size: contain;
+      background-position: top left;
+      background-repeat: no-repeat;
+    }
+    &_sec {
+      grid-column: 5 span;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: unset;
+        bottom: calc(100% - 1px);
+        right: 0;
+        height: 3.15rem;
+        width: 100%;
+        background-image: url("./../img/svg/possible-mask.svg");
+        background-size: contain;
+        background-position: bottom right;
+        background-repeat: no-repeat;
+      }
+    }
+
+    .swiper {
+      width: 100%;
+      min-width: 0;
+      height: 100%;
+      max-width: 100%;
+    }
+  }
+  &__control {
+    padding: 6rem 5.8rem;
+  }
+  &__pagination {
+  }
+}
+
+.pos-item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 12rem 6rem;
+  padding-top: 5.7rem;
+
+  &__capture {
+    margin: 0;
+    margin-bottom: 4rem;
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 100%;
+    color: #000;
+  }
+  &__img {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    img {
+      display: block;
+      width: auto;
+      height: 100%;
+      max-height: 41.3rem;
+      object-fit: contain;
+    }
+  }
+}

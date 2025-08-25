@@ -1,0 +1,74 @@
+.comfort {
+  padding: 14rem 0;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 9rem;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4rem;
+  }
+}
+
+.comfort-item {
+  display: flex;
+  flex-direction: column;
+  min-height: 36rem;
+  height: auto;
+  &__img {
+    position: relative;
+    mask-image: url("./../img/svg/comfort-mask-1.svg");
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
+    mask-position: bottom;
+    &::before {
+      content: "";
+      padding-top: 38%;
+      display: block;
+    }
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__content {
+    flex-grow: 1;
+    padding: 3.9rem 4.3rem;
+    background-color: var(--bereg-white);
+  }
+
+  &__fig {
+    margin: 0;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-size: 3rem;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: var(--bereg-accent);
+  }
+
+  &:nth-child(2),
+  &:nth-child(4),
+  &:nth-child(5),
+  &:nth-child(7),
+  &:nth-child(9),
+  &:nth-child(11),
+  &:nth-child(12),
+  &:nth-child(14),
+  &:nth-child(16),
+  &:nth-child(18) {
+    .comfort-item__img {
+      mask-image: url("./../img/svg/comfort-mask-2.svg");
+    }
+  }
+}
