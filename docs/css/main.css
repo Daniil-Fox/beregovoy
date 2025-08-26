@@ -290,6 +290,19 @@ a {
   color: var(--bereg-black);
 }
 
+ul,
+ol {
+  padding-left: 3.3rem;
+}
+ul li::marker,
+ol li::marker {
+  font-size: 75%;
+}
+ul li:not(:last-child),
+ol li:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
 .link-btn {
   -webkit-transition-property: color;
   transition-property: color;
@@ -2307,4 +2320,48 @@ a {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+}
+
+.building {
+  padding: 12rem 0 16rem;
+}
+.building__title {
+  margin-bottom: 8.8rem;
+}
+.building__items {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+}
+.building__content {
+  background-color: var(--bereg-white);
+  padding: 9.3rem 10rem;
+  padding-right: 9.5rem;
+  padding-bottom: 5rem;
+  margin-bottom: 9.8rem;
+  position: relative;
+}
+.building__content::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: calc(100% - 1px);
+  background-color: var(--bereg-white);
+  height: 3.5rem;
+  width: 100%;
+  -webkit-mask-image: url("./../img/svg/building-mask.svg");
+  mask-image: url("./../img/svg/building-mask.svg");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-position: left top;
+  mask-position: left top;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+.building__capture {
+  margin-bottom: 3.4rem;
+  line-height: 120%;
+  letter-spacing: 0.03em;
 }/*# sourceMappingURL=main.css.map */

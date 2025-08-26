@@ -1,0 +1,43 @@
+.building {
+  padding: 12rem 0 16rem;
+
+  &__title {
+    margin-bottom: 8.8rem;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+  }
+
+  &__content {
+    background-color: var(--bereg-white);
+    padding: 9.3rem 10rem;
+    padding-right: 9.5rem;
+    padding-bottom: 5rem;
+    margin-bottom: 9.8rem;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: calc(100% - 1px);
+      background-color: var(--bereg-white);
+
+      height: 3.5rem;
+      width: 100%;
+
+      mask-image: url("./../img/svg/building-mask.svg");
+      mask-size: contain;
+      mask-position: left top;
+      mask-repeat: no-repeat;
+    }
+  }
+  &__capture {
+    margin-bottom: 3.4rem;
+    line-height: 120%;
+    letter-spacing: 0.03em;
+  }
+}
