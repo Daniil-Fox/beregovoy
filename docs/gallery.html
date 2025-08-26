@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+  <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="theme-color" content="#111111" />
+  <title>Береговой</title>
+  <link
+    rel="preload"
+    href="fonts/Geist-Regular.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
+  <link
+    rel="preload"
+    href="fonts/Geist-Light.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
+  <link
+    rel="preload"
+    href="fonts/Geist-ExtraLight.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
+  <link
+    rel="preload"
+    href="fonts/Geist-Medium.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
+  <link
+    rel="preload"
+    href="fonts/Geist-SemiBold.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
+  <link
+    rel="preload"
+    href="fonts/Geologica-Light.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
+  <link
+    rel="preload"
+    href="fonts/GolosText-Regular.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
+  <link rel="stylesheet" href="css/vendor.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <script defer src="js/main.js"></script>
+  <script
+    src="https://api-maps.yandex.ru/2.1/?apikey=221cbec3-01c0-4b1a-8417-d7d65e719c35&lang=ru_RU"
+    type="text/javascript"
+  ></script>
+</head>
+
+
+  <body class="page__body">
+    <div class="site-container">
+      <header class="header">
+  <div class="container">
+    <div class="header__container">
+      <a href="./" class="logo header__logo">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M8.39299 1.63079C10.9493 0.55446 13.6949 0 16.4685 0H25.9091V6.81818H16.4685C14.6037 6.81818 12.7576 7.19099 11.0388 7.91467C8.48256 8.991 5.7369 9.54545 2.96326 9.54545H0V2.72727H2.96326C4.82816 2.72727 6.67424 2.35447 8.39299 1.63079ZM8.39299 11.8581C10.9493 10.7817 13.6949 10.2273 16.4685 10.2273H20.8916C25.5454 10.2273 29.3182 14 29.3182 18.6539V18.8461C29.3182 23.5 25.5454 27.2727 20.8916 27.2727H16.4685C14.6037 27.2727 12.7576 27.6455 11.0388 28.3692C8.48256 29.4455 5.7369 30 2.96326 30H0V23.1818H2.96326C4.82816 23.1818 6.67424 22.809 8.39299 22.0853C10.9493 21.009 13.6949 20.4545 16.4685 20.4545H20.8916C21.7799 20.4545 22.5 19.7344 22.5 18.8461V18.6539C22.5 17.7656 21.7799 17.0455 20.8916 17.0455H16.4685C14.6037 17.0455 12.7576 17.4183 11.0388 18.142C8.48256 19.2183 5.7369 19.7727 2.96326 19.7727H0V12.9545H2.96326C4.82816 12.9545 6.67424 12.5817 8.39299 11.8581Z" />
+        </svg>
+
+        Береговой
+      </a>
+
+      <nav class="nav header__nav">
+        <ul>
+          <li>
+            <a href="#">Галерея</a>
+          </li>
+          <li>
+            <a href="#">Новости</a>
+          </li>
+          <li>
+            <a href="#">Ход строительства</a>
+          </li>
+          <li>
+            <a href="#">Квартиры</a>
+          </li>
+          <li>
+            <a href="#">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header__buttons">
+        <a href="#" target="_blank" class="header__btn soc">
+          <img src="./img/whatsapp.webp" alt="" />
+        </a>
+        <a href="#" target="_blank" class="header__btn soc">
+          <img src="./img/tel.webp" alt="" />
+        </a>
+        <a href="" class="btn btn-reset header__btn btn_small">
+          Выбрать квартиру
+        </a>
+      </div>
+    </div>
+  </div>
+  <svg width="1030" height="25" viewBox="0 0 1030 25" fill="none" xmlns="http://www.w3.org/2000/svg"
+    class="wave header__wave">
+    <path d="M201.5 0C201.5 0 421.222 24.7563 509 24.7563C640.694 24.7563 724.232 0 856 0H201.5Z" fill="#FEFEFE" />
+  </svg>
+
+
+</header>
+      <main class="main">
+        <section class="gallery">
+  <div class="container">
+    <a href="#" class="back-btn link-btn">
+      <svg class="">
+        <use xlink:href="img/sprite.svg#arr-back"></use>
+      </svg>
+
+      Назад
+    </a>
+
+    <h1 class="title-xml gallery__title">Галерея</h1>
+
+    <div class="gallery__items">
+      <div class="gallery__item g-item">
+        <div class="g-item__slider swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="g-item__img">
+                <picture>
+                  <source
+                    srcset="./img/gallery/01-mob.webp"
+                    media="(max-width: 600px)"
+                    type="image/webp"
+                  />
+                  <img
+                    loading="lazy"
+                    src="./img/gallery/01.webp"
+                    class="image"
+                    width="880"
+                    height="535"
+                    alt=""
+                  />
+                </picture>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="g-item__img">
+                <picture>
+                  <source
+                    srcset="./img/gallery/01-mob.webp"
+                    media="(max-width: 600px)"
+                    type="image/webp"
+                  />
+                  <img
+                    loading="lazy"
+                    src="./img/gallery/01.webp"
+                    class="image"
+                    width="880"
+                    height="535"
+                    alt=""
+                  />
+                </picture>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="g-item__content">
+          <p class="g-item__capture desc1">Общие фото</p>
+
+          <div class="g-item__control">
+            <button class="btn-reset g-item__arr g-item__arr_left">
+              <svg class="">
+                <use xlink:href="img/sprite.svg#control-left"></use>
+              </svg>
+            </button>
+            <button class="btn-reset g-item__arr g-item__arr_right">
+              <svg class="">
+                <use xlink:href="img/sprite.svg#control-left"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery__item g-item">
+        <div class="g-item__slider swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="g-item__img">
+                <picture>
+                  <source
+                    srcset="./img/gallery/02-mob.webp"
+                    media="(max-width: 600px)"
+                    type="image/webp"
+                  />
+                  <img
+                    loading="lazy"
+                    src="./img/gallery/02.webp"
+                    class="image"
+                    width="880"
+                    height="535"
+                    alt=""
+                  />
+                </picture>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="g-item__img">
+                <picture>
+                  <source
+                    srcset="./img/gallery/02-mob.webp"
+                    media="(max-width: 600px)"
+                    type="image/webp"
+                  />
+                  <img
+                    loading="lazy"
+                    src="./img/gallery/02.webp"
+                    class="image"
+                    width="880"
+                    height="535"
+                    alt=""
+                  />
+                </picture>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="g-item__content">
+          <p class="g-item__capture desc1">Подъезд</p>
+
+          <div class="g-item__control">
+            <button class="btn-reset g-item__arr g-item__arr_left">
+              <svg class="">
+                <use xlink:href="img/sprite.svg#control-left"></use>
+              </svg>
+            </button>
+            <button class="btn-reset g-item__arr g-item__arr_right">
+              <svg class="">
+                <use xlink:href="img/sprite.svg#control-left"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery__item g-item">
+        <div class="g-item__slider swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="g-item__img">
+                <picture>
+                  <source
+                    srcset="./img/gallery/03-mob.webp"
+                    media="(max-width: 600px)"
+                    type="image/webp"
+                  />
+                  <img
+                    loading="lazy"
+                    src="./img/gallery/03.webp"
+                    class="image"
+                    width="880"
+                    height="535"
+                    alt=""
+                  />
+                </picture>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="g-item__img">
+                <picture>
+                  <source
+                    srcset="./img/gallery/03-mob.webp"
+                    media="(max-width: 600px)"
+                    type="image/webp"
+                  />
+                  <img
+                    loading="lazy"
+                    src="./img/gallery/03.webp"
+                    class="image"
+                    width="880"
+                    height="535"
+                    alt=""
+                  />
+                </picture>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="g-item__content">
+          <p class="g-item__capture desc1">Лифты и общие зоны</p>
+
+          <div class="g-item__control">
+            <button class="btn-reset g-item__arr g-item__arr_left">
+              <svg class="">
+                <use xlink:href="img/sprite.svg#control-left"></use>
+              </svg>
+            </button>
+            <button class="btn-reset g-item__arr g-item__arr_right">
+              <svg class="">
+                <use xlink:href="img/sprite.svg#control-left"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery__item g-item">
+        <div class="g-item__slider swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="g-item__img">
+                <picture>
+                  <source
+                    srcset="./img/gallery/04-mob.webp"
+                    media="(max-width: 600px)"
+                    type="image/webp"
+                  />
+                  <img
+                    loading="lazy"
+                    src="./img/gallery/04.webp"
+                    class="image"
+                    width="880"
+                    height="535"
+                    alt=""
+                  />
+                </picture>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="g-item__img">
+                <picture>
+                  <source
+                    srcset="./img/gallery/04-mob.webp"
+                    media="(max-width: 600px)"
+                    type="image/webp"
+                  />
+                  <img
+                    loading="lazy"
+                    src="./img/gallery/04.webp"
+                    class="image"
+                    width="880"
+                    height="535"
+                    alt=""
+                  />
+                </picture>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="g-item__content">
+          <p class="g-item__capture desc1">Вид из окна</p>
+
+          <div class="g-item__control">
+            <button class="btn-reset g-item__arr g-item__arr_left">
+              <svg class="">
+                <use xlink:href="img/sprite.svg#control-left"></use>
+              </svg>
+            </button>
+            <button class="btn-reset g-item__arr g-item__arr_right">
+              <svg class="">
+                <use xlink:href="img/sprite.svg#control-left"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ <section class="cta">
+  <div class="container">
+    <div class="cta__container">
+      <div class="cta__content">
+        <h2 class="title-xl cta__title">Связаться с&nbsp;нами</h2>
+        <p class="desc2 cta__desc">
+          Задайте любые интересующие вас вопросы менеджеру.
+        </p>
+
+        <form action="#" class="form cta__form">
+          <div class="form__field">
+            <div class="form__field-wrapper">
+              <input
+                id="name"
+                type="text"
+                class="form__input input-name"
+                name="Имя"
+              />
+              <label for="name" class="form__label">Ваше имя</label>
+            </div>
+          </div>
+          <div class="form__field">
+            <div class="form__field-wrapper">
+              <input
+                id="tel"
+                type="tel"
+                class="form__input input-name"
+                name="Телефон"
+              />
+              <label for="tel" class="form__label">Ваш телефон</label>
+            </div>
+          </div>
+          <button class="btn-reset btn btn_masked form__btn" disabled>
+            оставить заявку
+          </button>
+        </form>
+        <address class="cta__extra desc2">
+          <p>Отдел продаж</p>
+          <p>
+            <a href="tel:+7 (914) 068-84-48 " class="link-btn">
+              +7 (914) 068-84-48
+            </a>
+          </p>
+          <p>Боль­шой ка­мень, ул. Кар­ла Мар­кса, д.31, офис 1</p>
+        </address>
+      </div>
+
+      <div class="cta__map" id="#map2"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+  ymaps.ready(function () {
+    const ourCompany = [43.109836, 132.349806];
+    let activeIndex = -1;
+    let markers = [];
+    let multiRoute;
+    var myMap = new ymaps.Map(
+        "#map2",
+        {
+          center: ourCompany,
+          zoom: 14,
+        },
+        {
+          searchControlProvider: "yandex#search",
+        }
+      ),
+      myPlacemark = new ymaps.Placemark(
+        myMap.getCenter(),
+        {},
+        {
+          iconLayout: "default#image",
+          iconImageHref: "./img/svg/marker.svg",
+          iconImageSize: [60, 60],
+          iconImageOffset: [0, -34],
+        }
+      );
+
+    myMap.geoObjects.add(myPlacemark);
+    myMap.controls.remove("geolocationControl"); // удаляем геолокацию
+    myMap.controls.remove("searchControl"); // удаляем поиск
+    myMap.controls.remove("trafficControl"); // удаляем контроль трафика
+    myMap.controls.remove("typeSelector"); // удаляем тип
+    myMap.controls.remove("fullscreenControl"); // удаляем кнопку перехода в полноэкранный режим
+    myMap.controls.remove("zoomControl"); // удаляем контрол зуммирования
+    myMap.controls.remove("rulerControl"); // удаляем контрол правил
+    // myMap.behaviors.disable(["scrollZoom"]); // отключаем скролл карты (опционально)
+    const placeForm = document.querySelector(".place-form");
+  });
+</script>
+
+      </main>
+      <footer class="footer">
+  <svg
+    width="1690"
+    height="35"
+    viewBox="0 0 1690 35"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    class="wave"
+  >
+    <path
+      d="M1690 35C1125.94 35 1324.27 0.000557938 803.515 0C376.283 -0.000457737 511.484 35 0 35H1690Z"
+      fill="#FEFEFE"
+    />
+  </svg>
+
+  <div class="container">
+    <div class="footer__container">
+      <div class="footer__left">
+        <div class="footer__col">
+          <div class="footer__capture subtitle-xl">Отдел продаж</div>
+          <address class="footer__address footer-add">
+            <a href="tel:+7 914 068 84 48" class="footer-add__link link-btn">
+              +7 914 068 84 48
+            </a>
+            <a
+              href="mailto:sz-beregovoi@mail.ru"
+              class="footer-add__link link-btn"
+              >sz-beregovoi@mail.ru</a
+            >
+            <p class="footer-add__link">
+              Владивосток, Боль­шой ка­мень, ул. Кар­ла Мар­кса, д.31, офис 1
+            </p>
+            <p class="footer-add__link">Пн - Пт с 9:00 до 18:00</p>
+          </address>
+          <div class="footer__map" id="footer-map"></div>
+        </div>
+
+        <div class="footer__col">
+          <div class="footer__capture subtitle-xl">Навигация по сайту</div>
+
+          <nav class="footer__nav nav">
+            <ul class="list-reset nav__list">
+              <li class="nav__item">
+                <a href="#" class="nav__link">Галерея</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Новости</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Ход строительства</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Квартиры</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <div class="footer__right">
+        <a href="./" class="footer__logo logo">
+          <svg
+            width="30"
+            height="30"
+            viewBox="0 0 30 30"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M8.39299 1.63079C10.9493 0.55446 13.6949 0 16.4685 0H25.9091V6.81818H16.4685C14.6037 6.81818 12.7576 7.19099 11.0388 7.91467C8.48256 8.991 5.7369 9.54545 2.96326 9.54545H0V2.72727H2.96326C4.82816 2.72727 6.67424 2.35447 8.39299 1.63079ZM8.39299 11.8581C10.9493 10.7817 13.6949 10.2273 16.4685 10.2273H20.8916C25.5454 10.2273 29.3182 14 29.3182 18.6539V18.8461C29.3182 23.5 25.5454 27.2727 20.8916 27.2727H16.4685C14.6037 27.2727 12.7576 27.6455 11.0388 28.3692C8.48256 29.4455 5.7369 30 2.96326 30H0V23.1818H2.96326C4.82816 23.1818 6.67424 22.809 8.39299 22.0853C10.9493 21.009 13.6949 20.4545 16.4685 20.4545H20.8916C21.7799 20.4545 22.5 19.7344 22.5 18.8461V18.6539C22.5 17.7656 21.7799 17.0455 20.8916 17.0455H16.4685C14.6037 17.0455 12.7576 17.4183 11.0388 18.142C8.48256 19.2183 5.7369 19.7727 2.96326 19.7727H0V12.9545H2.96326C4.82816 12.9545 6.67424 12.5817 8.39299 11.8581Z"
+            />
+          </svg>
+
+          Береговой
+        </a>
+        <ul class="footer__socials list-reset">
+          <li>
+            <a href="#" target="_blank" class="soc">
+              <img src="./img/whatsapp.webp" alt="" />
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank" class="soc">
+              <img src="./img/tel.webp" alt="" />
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank" class="soc">
+              <img src="./img/insta.webp" alt="" />
+            </a>
+          </li>
+        </ul>
+        <div class="footer__block">
+          <a href="#" class="footer-add__link link-btn">
+            Политика конфиденциальности
+          </a>
+          <a href="#" class="footer-add__link link-btn">Документация</a>
+        </div>
+
+        <div class="footer__block">
+          <small>Информация на сайте не является публичной офертой</small>
+          <small>©2025 ЖК "Береговой"</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+  ymaps.ready(function () {
+    const ourCompany = [43.109836, 132.349806];
+    let activeIndex = -1;
+    let markers = [];
+    let multiRoute;
+    var myMap = new ymaps.Map(
+        "footer-map",
+        {
+          center: ourCompany,
+          zoom: 14,
+        },
+        {
+          searchControlProvider: "yandex#search",
+        }
+      ),
+      myPlacemark = new ymaps.Placemark(
+        myMap.getCenter(),
+        {},
+        {
+          iconLayout: "default#image",
+          iconImageHref: "./img/placemark-footer.svg",
+          iconImageSize: [30, 30],
+          iconImageOffset: [0, -34],
+        }
+      );
+
+    myMap.geoObjects.add(myPlacemark);
+
+    myMap.controls.remove("geolocationControl"); // удаляем геолокацию
+    myMap.controls.remove("searchControl"); // удаляем поиск
+    myMap.controls.remove("trafficControl"); // удаляем контроль трафика
+    myMap.controls.remove("typeSelector"); // удаляем тип
+    myMap.controls.remove("fullscreenControl"); // удаляем кнопку перехода в полноэкранный режим
+    myMap.controls.remove("zoomControl"); // удаляем контрол зуммирования
+    myMap.controls.remove("rulerControl"); // удаляем контрол правил
+    myMap.behaviors.disable(["scrollZoom"]); // отключаем скролл карты (опционально)
+  });
+</script>
+
+    </div>
+  </body>
+</html>

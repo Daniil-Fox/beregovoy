@@ -31,7 +31,16 @@
   $cards-per-row: 3;
   $gap: 4rem;
   width: calc((100% - (#{$cards-per-row - 1} * #{$gap})) / #{$cards-per-row});
+  position: relative;
 
+  &__link {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+  }
   &__img {
     position: relative;
     mask-image: url("./../img/svg/news-mask.svg");

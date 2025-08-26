@@ -1,0 +1,32 @@
+.single {
+  padding: 12rem 0 16rem;
+  &__container {
+    display: grid;
+    align-items: flex-start;
+    grid-template-columns: repeat(12, 1fr);
+  }
+  &__title {
+    margin: 0;
+    font-weight: 600;
+    font-size: 5rem;
+    line-height: 120%;
+    color: #000;
+  }
+  &__time {
+    display: block;
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 120%;
+    color: #000;
+  }
+  &__content {
+    grid-column: 10 span;
+  }
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}

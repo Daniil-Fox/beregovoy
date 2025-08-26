@@ -48,3 +48,22 @@ new Swiper(".more__slider", {
     nextEl: ".more__btn--next",
   },
 });
+
+const galleryItems = document.querySelectorAll(".g-item");
+
+if (galleryItems.length > 0) {
+  galleryItems.forEach((item) => {
+    const slider = item.querySelector(".g-item__slider");
+    const btnPrev = item.querySelector(".g-item__arr_left");
+    const btnRight = item.querySelector(".g-item__arr_right");
+    new Swiper(slider, {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true,
+      navigation: {
+        prevEl: btnPrev,
+        nextEl: btnRight,
+      },
+    });
+  });
+}

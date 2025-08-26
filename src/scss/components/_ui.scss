@@ -7,6 +7,15 @@
   text-transform: uppercase;
   color: var(--bereg-accent);
 }
+.title-xml {
+  margin: 0;
+  font-weight: 600;
+  font-size: 8rem;
+  line-height: 100%;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--bereg-accent);
+}
 .title-xl {
   margin: 0;
   font-weight: 600;
@@ -76,7 +85,25 @@
     color: inherit;
   }
 }
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 3.8rem;
 
+  font-weight: 500;
+  font-size: 2.2rem;
+  line-height: 120%;
+  color: var(--bereg-black);
+
+  svg {
+    width: 1.2rem;
+    height: 1.8rem;
+    flex-shrink: 0;
+    stroke: currentColor;
+    fill: none;
+  }
+}
 .btn {
   position: relative;
   display: inline-flex;
@@ -404,4 +431,89 @@
 // }
 [class*="copyrights-pane"] {
   display: none !important;
+}
+
+.content {
+  font-weight: 300;
+  font-size: 2rem;
+  line-height: 150%;
+  color: #000;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 700;
+    margin-bottom: 2.4rem;
+    line-height: 1.2;
+  }
+
+  h1 {
+    font-size: 3.2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  time {
+    font-size: 1.6rem;
+    color: #888;
+    float: right;
+    margin-bottom: 2.4rem;
+    display: block;
+  }
+
+  p,
+  ul,
+  ol {
+    font-weight: 300;
+    font-size: 2rem;
+    line-height: 150%;
+    color: #000;
+  }
+
+  ul,
+  ol {
+    padding-left: 2.4rem;
+  }
+
+  li {
+    margin-bottom: 1rem;
+  }
+
+  figure {
+    margin: 0;
+    &:not(:last-child) {
+      margin-bottom: 10rem;
+    }
+    margin-top: 10rem;
+    img,
+    video {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 1.2rem;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+      background: #eee;
+    }
+    video {
+      background: #000;
+      min-height: 320px;
+      position: relative;
+    }
+
+    video,
+    iframe {
+      max-width: 128rem;
+      margin: 0 auto;
+      aspect-ratio: 16 / 9;
+    }
+  }
+
+  video[poster] {
+    position: relative;
+    cursor: pointer;
+  }
+  video::-webkit-media-controls {
+    opacity: 1 !important;
+  }
 }

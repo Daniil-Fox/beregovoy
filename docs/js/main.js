@@ -10902,6 +10902,23 @@ new swiper__WEBPACK_IMPORTED_MODULE_0__.Swiper(".more__slider", {
     nextEl: ".more__btn--next"
   }
 });
+const galleryItems = document.querySelectorAll(".g-item");
+if (galleryItems.length > 0) {
+  galleryItems.forEach(item => {
+    const slider = item.querySelector(".g-item__slider");
+    const btnPrev = item.querySelector(".g-item__arr_left");
+    const btnRight = item.querySelector(".g-item__arr_right");
+    new swiper__WEBPACK_IMPORTED_MODULE_0__.Swiper(slider, {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true,
+      navigation: {
+        prevEl: btnPrev,
+        nextEl: btnRight
+      }
+    });
+  });
+}
 
 /***/ })
 

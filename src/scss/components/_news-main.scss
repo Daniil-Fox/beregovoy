@@ -1,0 +1,13 @@
+.news-main {
+  padding: 12rem 0 16rem;
+
+  &__title {
+    margin-bottom: 8.8rem;
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+  }
+}

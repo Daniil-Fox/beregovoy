@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+  @include('partials/head.html')
+
+  <body class="page__body">
+    <div class="site-container">
+      @include('partials/header.html')
+      <main class="main">
+        <section class="single">
+          <div class="container">
+            <div class="single__container">
+              <a href="#" class="back-btn link-btn">
+                <svg class="">
+                  <use xlink:href="img/sprite.svg#arr-back"></use>
+                </svg>
+
+                Назад
+              </a>
+              <div class="single__content">
+                <div class="single__header">
+                  <h1 class="single__title">Работы БК</h1>
+                  <time datetime="2024-07-24" class="single__time"
+                    >24.07.2024</time
+                  >
+                </div>
+                <div class="content">
+                  <figure>
+                    <img src="./img/imgcover.jpg" alt="Работы БК" />
+                  </figure>
+
+                  <p>
+                    На настоящий момент (по состоянию на начало марта 2025 года)
+                    выполнены следующие основные виды работ:<br />
+                    Произведены работы по устройству котлована, отсыпке и
+                    укреплению основания под заливку бетонной плиты;<br />
+                    Выполнен фундамент на бетонной подушке из монолитной
+                    железобетонной плиты толщиной 800 мм (из бетона класса
+                    B25);<br />
+                    Обеспечена защита фундамента в грунте и стен технического
+                    этажа при помощи многослойной рулонной гидроизоляции;<br />
+                    Возведены 8 этажей, из которых 1 технический и 7
+                    надземных;<br />
+                    Стены и перекрытия монолитные железобетонные толщиной 200 мм
+                    (из бетона класса В25). Стены утеплены пенополистеролом, для
+                    защиты которого устроена профилированная мембрана;<br />
+                    На всех этапах организована проверка прочности
+                    железобетонных конструкций, испытание основания фундаментной
+                    плиты;<br />
+                    Выполнено устройство пристенной дренажной системы для отвода
+                    грунтовых и поверхностных вод;<br />
+                    Выполнены подготовительные и часть основных работы по
+                    прокладке и монтажу внутриплощадочных и внеплощадочных сетей
+                    и коммуникаций (водоснабжение, хозяйственно-бытовая,
+                    дренажная и ливневая канализация).<br />
+                    27.02.2025
+                  </p>
+                  <figure>
+                    <video poster="img/video-poster.jpg" controls>
+                      <source src="video.mp4" type="video/mp4" />
+                    </video>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        @include('partials/cta.html')
+      </main>
+      @include('partials/footer.html')
+    </div>
+  </body>
+</html>
