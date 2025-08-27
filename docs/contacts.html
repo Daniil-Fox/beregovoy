@@ -120,114 +120,54 @@
 
 
 </header>
-      <main class="main">
-        <section class="single">
-          <div class="container">
-            <div class="single__container">
-              <a href="#" class="back-btn link-btn">
-                <svg class="">
-                  <use xlink:href="img/sprite.svg#arr-back"></use>
-                </svg>
-
-                Назад
-              </a>
-              <div class="single__content">
-                <div class="single__header">
-                  <h1 class="single__title">Работы БК</h1>
-                  <time datetime="2024-07-24" class="single__time"
-                    >24.07.2024</time
-                  >
-                </div>
-                <div class="content">
-                  <figure>
-                    <img src="./img/imgcover.jpg" alt="Работы БК" />
-                  </figure>
-
-                  <p>
-                    На настоящий момент (по состоянию на начало марта 2025 года)
-                    выполнены следующие основные виды работ:<br />
-                    Произведены работы по устройству котлована, отсыпке и
-                    укреплению основания под заливку бетонной плиты;<br />
-                    Выполнен фундамент на бетонной подушке из монолитной
-                    железобетонной плиты толщиной 800 мм (из бетона класса
-                    B25);<br />
-                    Обеспечена защита фундамента в грунте и стен технического
-                    этажа при помощи многослойной рулонной гидроизоляции;<br />
-                    Возведены 8 этажей, из которых 1 технический и 7
-                    надземных;<br />
-                    Стены и перекрытия монолитные железобетонные толщиной 200 мм
-                    (из бетона класса В25). Стены утеплены пенополистеролом, для
-                    защиты которого устроена профилированная мембрана;<br />
-                    На всех этапах организована проверка прочности
-                    железобетонных конструкций, испытание основания фундаментной
-                    плиты;<br />
-                    Выполнено устройство пристенной дренажной системы для отвода
-                    грунтовых и поверхностных вод;<br />
-                    Выполнены подготовительные и часть основных работы по
-                    прокладке и монтажу внутриплощадочных и внеплощадочных сетей
-                    и коммуникаций (водоснабжение, хозяйственно-бытовая,
-                    дренажная и ливневая канализация).<br />
-                    27.02.2025
-                  </p>
-                  <figure>
-                    <video poster="img/video-poster.jpg" controls>
-                      <source src="video.mp4" type="video/mp4" />
-                    </video>
-                  </figure>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="cta">
+      <main class="main"><section class="contacts">
   <div class="container">
-    <div class="cta__container">
-      <div class="cta__content">
-        <h2 class="title-xl cta__title">Связаться с&nbsp;нами</h2>
-        <p class="desc2 cta__desc">
-          Задайте любые интересующие вас вопросы менеджеру.
-        </p>
+    <a href="#" class="back-btn link-btn">
+      <svg class="">
+        <use xlink:href="img/sprite.svg#arr-back"></use>
+      </svg>
 
-        <form action="#" class="form cta__form">
-          <div class="form__field">
-            <div class="form__field-wrapper">
-              <input
-                id="name"
-                type="text"
-                class="form__input input-name"
-                name="Имя"
-              />
-              <label for="name" class="form__label">Ваше имя</label>
-            </div>
-          </div>
-          <div class="form__field">
-            <div class="form__field-wrapper">
-              <input
-                id="tel"
-                type="tel"
-                class="form__input input-name"
-                name="Телефон"
-              />
-              <label for="tel" class="form__label">Ваш телефон</label>
-            </div>
-          </div>
-          <button class="btn-reset btn btn_masked form__btn" disabled>
-            оставить заявку
-          </button>
-        </form>
-        <address class="cta__extra desc2">
-          <p>Отдел продаж</p>
-          <p>
-            <a href="tel:+7 (914) 068-84-48 " class="link-btn">
-              +7 (914) 068-84-48
-            </a>
-          </p>
-          <p>Боль­шой ка­мень, ул. Кар­ла Мар­кса, д.31, офис 1</p>
-        </address>
+      Назад
+    </a>
+
+    <div class="contacts__header">
+      <h1 class="title-xml contacts__title">Контакты</h1>
+
+      <button class="btn-reset btn btn_masked contacts__btn">
+        записаться на встречу
+      </button>
+    </div>
+
+    <div class="contacts__items">
+      <div class="contacts__row">
+        <div class="contacts__content">
+          <p class="contacts__capture subtitle-xl">отдел продаж</p>
+          <address class="contacts__address desc2">
+            <p>
+              <a href="tel:+79140688448" class="link-btn">+7 914 068 84 48</a>
+            </p>
+            <p>
+              <a href="mailto:sz-beregovoi@mail.ru" class="link-btn"
+                >sz-beregovoi@mail.ru</a
+              >
+            </p>
+            <p>Боль­шой ка­мень, ул. Кар­ла Мар­кса, д.31, офис 1</p>
+          </address>
+        </div>
+        <div class="contacts__map" id="map3"></div>
       </div>
-
-      <div class="cta__map" id="#map2"></div>
+      <div class="contacts__row">
+        <div class="contacts__content">
+          <p class="contacts__capture subtitle-xl">расположение жк</p>
+          <address class="contacts__address desc2">
+            <p>
+              Приморский край, Надеждинский район,<br />
+              пос. Тавричанка, ул. 60 лет ВЛКСМ
+            </p>
+          </address>
+        </div>
+        <div class="contacts__map" id="map4"></div>
+      </div>
     </div>
   </div>
 </section>
@@ -235,14 +175,11 @@
 <script>
   ymaps.ready(function () {
     const ourCompany = [43.109836, 132.349806];
-    let activeIndex = -1;
-    let markers = [];
-    let multiRoute;
-    var myMap = new ymaps.Map(
-        "#map2",
+    const myMap = new ymaps.Map(
+        "map3",
         {
           center: ourCompany,
-          zoom: 14,
+          zoom: 16,
         },
         {
           searchControlProvider: "yandex#search",
@@ -253,9 +190,9 @@
         {},
         {
           iconLayout: "default#image",
-          iconImageHref: "./img/svg/marker.svg",
-          iconImageSize: [60, 60],
-          iconImageOffset: [0, -34],
+          iconImageHref: "./img/svg/placemark.svg",
+          iconImageSize: [50, 50],
+          iconImageOffset: [-25, -50],
         }
       );
 
@@ -267,11 +204,40 @@
     myMap.controls.remove("fullscreenControl"); // удаляем кнопку перехода в полноэкранный режим
     myMap.controls.remove("zoomControl"); // удаляем контрол зуммирования
     myMap.controls.remove("rulerControl"); // удаляем контрол правил
-    const placeForm = document.querySelector(".place-form");
+
+    const ourBuilding = [43.325941, 131.888386];
+    const myMap2 = new ymaps.Map(
+      "map4",
+      {
+        center: ourBuilding,
+        zoom: 16,
+      },
+      {
+        searchControlProvider: "yandex#search",
+      }
+    );
+    const myPlacemark2 = new ymaps.Placemark(
+      myMap2.getCenter(),
+      {},
+      {
+        iconLayout: "default#image",
+        iconImageHref: "./img/svg/marker.svg",
+        iconImageSize: [50, 50],
+        iconImageOffset: [-25, -50],
+      }
+    );
+
+    myMap2.geoObjects.add(myPlacemark2);
+    myMap2.controls.remove("geolocationControl"); // удаляем геолокацию
+    myMap2.controls.remove("searchControl"); // удаляем поиск
+    myMap2.controls.remove("trafficControl"); // удаляем контроль трафика
+    myMap2.controls.remove("typeSelector"); // удаляем тип
+    myMap2.controls.remove("fullscreenControl"); // удаляем кнопку перехода в полноэкранный режим
+    myMap2.controls.remove("zoomControl"); // удаляем контрол зуммирования
+    myMap2.controls.remove("rulerControl"); // удаляем контрол правил
   });
 </script>
-
-      </main>
+</main>
       <footer class="footer">
   <svg
     width="1690"

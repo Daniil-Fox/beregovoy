@@ -137,7 +137,11 @@
       <div class="gallery__item g-item">
         <div class="g-item__slider swiper">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
+            <div
+              class="swiper-slide"
+              data-fancybox="gallery"
+              data-src="./img/gallery/01.webp"
+            >
               <div class="g-item__img">
                 <picture>
                   <source
@@ -156,7 +160,11 @@
                 </picture>
               </div>
             </div>
-            <div class="swiper-slide">
+            <div
+              class="swiper-slide"
+              data-fancybox="gallery"
+              data-src="./img/gallery/01.webp"
+            >
               <div class="g-item__img">
                 <picture>
                   <source
@@ -199,7 +207,11 @@
       <div class="gallery__item g-item">
         <div class="g-item__slider swiper">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
+            <div
+              class="swiper-slide"
+              data-fancybox="gallery"
+              data-src="./img/gallery/01.webp"
+            >
               <div class="g-item__img">
                 <picture>
                   <source
@@ -218,7 +230,11 @@
                 </picture>
               </div>
             </div>
-            <div class="swiper-slide">
+            <div
+              class="swiper-slide"
+              data-fancybox="gallery"
+              data-src="./img/gallery/01.webp"
+            >
               <div class="g-item__img">
                 <picture>
                   <source
@@ -261,7 +277,11 @@
       <div class="gallery__item g-item">
         <div class="g-item__slider swiper">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
+            <div
+              class="swiper-slide"
+              data-fancybox="gallery"
+              data-src="./img/gallery/01.webp"
+            >
               <div class="g-item__img">
                 <picture>
                   <source
@@ -280,7 +300,11 @@
                 </picture>
               </div>
             </div>
-            <div class="swiper-slide">
+            <div
+              class="swiper-slide"
+              data-fancybox="gallery"
+              data-src="./img/gallery/01.webp"
+            >
               <div class="g-item__img">
                 <picture>
                   <source
@@ -323,7 +347,11 @@
       <div class="gallery__item g-item">
         <div class="g-item__slider swiper">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
+            <div
+              class="swiper-slide"
+              data-fancybox="gallery"
+              data-src="./img/gallery/01.webp"
+            >
               <div class="g-item__img">
                 <picture>
                   <source
@@ -342,7 +370,11 @@
                 </picture>
               </div>
             </div>
-            <div class="swiper-slide">
+            <div
+              class="swiper-slide"
+              data-fancybox="gallery"
+              data-src="./img/gallery/01.webp"
+            >
               <div class="g-item__img">
                 <picture>
                   <source
@@ -471,7 +503,6 @@
     myMap.controls.remove("fullscreenControl"); // удаляем кнопку перехода в полноэкранный режим
     myMap.controls.remove("zoomControl"); // удаляем контрол зуммирования
     myMap.controls.remove("rulerControl"); // удаляем контрол правил
-    // myMap.behaviors.disable(["scrollZoom"]); // отключаем скролл карты (опционально)
     const placeForm = document.querySelector(".place-form");
   });
 </script>
@@ -599,7 +630,7 @@
         "footer-map",
         {
           center: ourCompany,
-          zoom: 14,
+          zoom: 16,
         },
         {
           searchControlProvider: "yandex#search",
@@ -610,9 +641,9 @@
         {},
         {
           iconLayout: "default#image",
-          iconImageHref: "./img/placemark-footer.svg",
-          iconImageSize: [30, 30],
-          iconImageOffset: [0, -34],
+          iconImageHref: "./img/svg/placemark.svg",
+          iconImageSize: [36, 36],
+          iconImageOffset: [-18, -36],
         }
       );
 

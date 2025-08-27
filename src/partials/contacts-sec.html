@@ -1,0 +1,117 @@
+<section class="contacts">
+  <div class="container">
+    <a href="#" class="back-btn link-btn">
+      <svg class="">
+        <use xlink:href="img/sprite.svg#arr-back"></use>
+      </svg>
+
+      Назад
+    </a>
+
+    <div class="contacts__header">
+      <h1 class="title-xml contacts__title">Контакты</h1>
+
+      <button class="btn-reset btn btn_masked contacts__btn">
+        записаться на встречу
+      </button>
+    </div>
+
+    <div class="contacts__items">
+      <div class="contacts__row">
+        <div class="contacts__content">
+          <p class="contacts__capture subtitle-xl">отдел продаж</p>
+          <address class="contacts__address desc2">
+            <p>
+              <a href="tel:+79140688448" class="link-btn">+7 914 068 84 48</a>
+            </p>
+            <p>
+              <a href="mailto:sz-beregovoi@mail.ru" class="link-btn"
+                >sz-beregovoi@mail.ru</a
+              >
+            </p>
+            <p>Боль­шой ка­мень, ул. Кар­ла Мар­кса, д.31, офис 1</p>
+          </address>
+        </div>
+        <div class="contacts__map" id="map3"></div>
+      </div>
+      <div class="contacts__row">
+        <div class="contacts__content">
+          <p class="contacts__capture subtitle-xl">расположение жк</p>
+          <address class="contacts__address desc2">
+            <p>
+              Приморский край, Надеждинский район,<br />
+              пос. Тавричанка, ул. 60 лет ВЛКСМ
+            </p>
+          </address>
+        </div>
+        <div class="contacts__map" id="map4"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  ymaps.ready(function () {
+    const ourCompany = [43.109836, 132.349806];
+    const myMap = new ymaps.Map(
+        "map3",
+        {
+          center: ourCompany,
+          zoom: 16,
+        },
+        {
+          searchControlProvider: "yandex#search",
+        }
+      ),
+      myPlacemark = new ymaps.Placemark(
+        myMap.getCenter(),
+        {},
+        {
+          iconLayout: "default#image",
+          iconImageHref: "./img/svg/placemark.svg",
+          iconImageSize: [50, 50],
+          iconImageOffset: [-25, -50],
+        }
+      );
+
+    myMap.geoObjects.add(myPlacemark);
+    myMap.controls.remove("geolocationControl"); // удаляем геолокацию
+    myMap.controls.remove("searchControl"); // удаляем поиск
+    myMap.controls.remove("trafficControl"); // удаляем контроль трафика
+    myMap.controls.remove("typeSelector"); // удаляем тип
+    myMap.controls.remove("fullscreenControl"); // удаляем кнопку перехода в полноэкранный режим
+    myMap.controls.remove("zoomControl"); // удаляем контрол зуммирования
+    myMap.controls.remove("rulerControl"); // удаляем контрол правил
+
+    const ourBuilding = [43.325941, 131.888386];
+    const myMap2 = new ymaps.Map(
+      "map4",
+      {
+        center: ourBuilding,
+        zoom: 16,
+      },
+      {
+        searchControlProvider: "yandex#search",
+      }
+    );
+    const myPlacemark2 = new ymaps.Placemark(
+      myMap2.getCenter(),
+      {},
+      {
+        iconLayout: "default#image",
+        iconImageHref: "./img/svg/marker.svg",
+        iconImageSize: [50, 50],
+        iconImageOffset: [-25, -50],
+      }
+    );
+
+    myMap2.geoObjects.add(myPlacemark2);
+    myMap2.controls.remove("geolocationControl"); // удаляем геолокацию
+    myMap2.controls.remove("searchControl"); // удаляем поиск
+    myMap2.controls.remove("trafficControl"); // удаляем контроль трафика
+    myMap2.controls.remove("typeSelector"); // удаляем тип
+    myMap2.controls.remove("fullscreenControl"); // удаляем кнопку перехода в полноэкранный режим
+    myMap2.controls.remove("zoomControl"); // удаляем контрол зуммирования
+    myMap2.controls.remove("rulerControl"); // удаляем контрол правил
+  });
+</script>

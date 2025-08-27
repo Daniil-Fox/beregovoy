@@ -1,0 +1,42 @@
+.contacts {
+  padding: 12rem 0;
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 9rem;
+  }
+  &__btn {
+    padding: 1.5rem 4.5rem;
+  }
+  &__content {
+    padding: 9.7rem 10rem;
+  }
+  &__row {
+    background-color: var(--bereg-white);
+    min-height: 37.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    &:not(:last-child) {
+      margin-bottom: 4rem;
+    }
+  }
+
+  &__capture {
+    margin-bottom: 3.7rem;
+    text-transform: uppercase;
+    line-height: 1;
+    letter-spacing: 0.03em;
+  }
+
+  &__address {
+    font-style: normal;
+    font-weight: 400;
+    p {
+      margin: 0;
+    }
+    a {
+      color: inherit;
+    }
+  }
+}

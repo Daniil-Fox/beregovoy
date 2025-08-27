@@ -6,9 +6,20 @@
   }
 
   &__items {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 4rem;
+    .g-item {
+      &:nth-child(3n + 1),
+      &:nth-child(3n + 2) {
+        .g-item__content::before {
+          transform: rotateY(180deg);
+        }
+      }
+      &:nth-child(4n + 1),
+      &:nth-child(4n + 2) {
+        .g-item__content::before {
+          transform: rotateY(0deg);
+        }
+      }
+    }
   }
 
   &__content {

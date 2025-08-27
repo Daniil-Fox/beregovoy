@@ -89,28 +89,11 @@
     myMap.controls.remove("fullscreenControl"); // удаляем кнопку перехода в полноэкранный режим
     myMap.controls.remove("zoomControl"); // удаляем контрол зуммирования
     myMap.controls.remove("rulerControl"); // удаляем контрол правил
-    // myMap.behaviors.disable(["scrollZoom"]); // отключаем скролл карты (опционально)
+
     const placeForm = document.querySelector(".place-form");
 
     var zoomInButton = document.getElementById("zoom-in");
     var zoomOutButton = document.getElementById("zoom-out");
-
-    // // Обработчики событий для кнопок
-    // zoomInButton.addEventListener("click", function () {
-    //   var currentZoom = myMap.getZoom();
-    //   if (currentZoom < 19) {
-    //     // максимальный zoom
-    //     myMap.setZoom(currentZoom + 1);
-    //   }
-    // });
-
-    // zoomOutButton.addEventListener("click", function () {
-    //   var currentZoom = myMap.getZoom();
-    //   if (currentZoom > 0) {
-    //     // минимальный zoom
-    //     myMap.setZoom(currentZoom - 1);
-    //   }
-    // });
     if (placeForm) {
       const input = placeForm.querySelector(".place-form__input");
       const btn = placeForm.querySelector(".place-form__btn");
