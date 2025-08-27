@@ -339,7 +339,9 @@ ol {
   &_dark {
     background: none;
     .control-btn {
-      background-image: url("./../img/svg/arr-left-dark.svg");
+      svg {
+        stroke: var(--bereg-black);
+      }
     }
     .pagination {
       --swiper-pagination-color: var(--bereg-black);
@@ -351,16 +353,47 @@ ol {
 .control-btn {
   width: 1.5rem;
   height: 3rem;
-
-  background-image: url("./../img/svg/arr-left.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+  position: relative;
 
   cursor: pointer;
 
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -2rem;
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: var(--bereg-white);
+    stroke-width: 0.3rem;
+    transition-property: stroke;
+    transition-duration: 0.3s;
+  }
+
   &_next {
     transform: rotateY(180deg);
+  }
+
+  @include hover {
+    svg {
+      stroke: var(--bereg-accent);
+    }
+  }
+  &:focus,
+  &:focus-visible {
+    outline: none;
+    svg {
+      stroke: var(--bereg-accent);
+    }
+  }
+
+  &:active {
+    svg {
+      stroke: var(--btn-hover);
+    }
   }
 }
 
