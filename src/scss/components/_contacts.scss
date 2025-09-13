@@ -1,24 +1,53 @@
 .contacts {
   padding: 12rem 0;
+  @include mobile {
+    padding: 7.6rem 0 10rem;
+  }
   &__header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 9rem;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 2.8rem;
+      margin-bottom: 9.5rem;
+    }
   }
   &__btn {
     padding: 1.5rem 4.5rem;
+    @include mobile {
+      padding: 1.8rem 3rem;
+    }
+  }
+  &__title {
+    @include mobile {
+      letter-spacing: 0em;
+    }
   }
   &__content {
     padding: 9.7rem 10rem;
+
+    @include mobile {
+      padding: 5.6rem 6rem;
+      padding-bottom: 5.2rem;
+    }
   }
   &__row {
     background-color: var(--bereg-white);
     min-height: 37.5rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
     &:not(:last-child) {
       margin-bottom: 4rem;
+      @include mobile {
+        margin-bottom: 9.4rem;
+      }
     }
   }
 
@@ -28,10 +57,15 @@
     line-height: 1;
     letter-spacing: 0.03em;
   }
-
+  &__map {
+    @include mobile {
+      height: 37.5rem;
+    }
+  }
   &__address {
     font-style: normal;
     font-weight: 400;
+    word-break: keep-all;
     p {
       margin: 0;
     }

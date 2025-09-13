@@ -1,16 +1,37 @@
 .possible {
   padding: 10.8rem 0;
+  @include mobile {
+    padding: 12.5rem 0;
+  }
+  &__title {
+    @include mobile {
+      line-height: 110%;
+    }
+  }
   &__header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
     margin-bottom: 9.1rem;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.7rem;
+
+      margin-bottom: 6.5rem;
+    }
   }
   &__grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 4rem;
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   &__slider {
@@ -28,14 +49,33 @@
       right: 0;
       height: 3rem;
       width: 100%;
-      background-image: url("./../img/svg/possible-mask-bottom.svg");
-      background-size: contain;
-      background-position: top left;
-      background-repeat: no-repeat;
+      mask-image: url("./../img/svg/possible-mask-bottom.svg");
+      mask-size: contain;
+      mask-position: top left;
+      mask-repeat: no-repeat;
+      background-color: var(--bereg-white);
+      @include mobile {
+        top: unset;
+        bottom: calc(100% - 1px);
+        mask-image: url("./../img/svg/more-mask-mob.svg");
+        transform: rotateY(180deg);
+        mask-position: top right;
+      }
+    }
+    &_main {
+      .pos-item {
+        @include mobile {
+          min-height: 47.6rem;
+        }
+      }
     }
     &_sec {
       grid-column: 5 span;
-
+      .pos-item {
+        @include mobile {
+          min-height: 41.9rem;
+        }
+      }
       &::after {
         content: "";
         position: absolute;
@@ -44,10 +84,19 @@
         right: 0;
         height: 3.15rem;
         width: 100%;
-        background-image: url("./../img/svg/possible-mask.svg");
-        background-size: contain;
-        background-position: bottom right;
-        background-repeat: no-repeat;
+        background-color: var(--bereg-white);
+        mask-image: url("./../img/svg/possible-mask.svg");
+        mask-size: contain;
+        mask-position: bottom right;
+        mask-repeat: no-repeat;
+
+        @include mobile {
+          bottom: unset;
+          top: calc(100% - 1px);
+          mask-image: url("./../img/svg/more-mask-mob.svg");
+          transform: rotateX(180deg);
+          mask-position: top right;
+        }
       }
     }
 
@@ -60,6 +109,15 @@
   }
   &__control {
     padding: 6rem 5.8rem;
+
+    @include mobile {
+      padding: 5.8rem 3.4rem;
+
+      .control-btn {
+        width: 2.4rem;
+        height: 2.4rem;
+      }
+    }
   }
   &__pagination {
   }
@@ -72,7 +130,10 @@
   justify-content: flex-end;
   padding: 12rem 6rem;
   padding-top: 5.7rem;
-
+  @include mobile {
+    justify-content: flex-start;
+    padding: 5.6rem 4rem;
+  }
   &__capture {
     margin: 0;
     margin-bottom: 4rem;
@@ -93,6 +154,10 @@
       height: 100%;
       max-height: 41.3rem;
       object-fit: contain;
+
+      @include mobile {
+        max-height: 24rem;
+      }
     }
   }
 }

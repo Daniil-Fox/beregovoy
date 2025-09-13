@@ -2,10 +2,15 @@
   margin-top: 4.7rem;
   padding: 15rem 0;
   @include mobile {
-    margin-bottom: 7.35rem;
+    margin: 0;
+    padding: 11.4rem 0;
   }
   &__title {
     margin-bottom: 4rem;
+    @include mobile {
+      font-size: 4.6rem;
+      margin-bottom: 5rem;
+    }
   }
 
   &__map {
@@ -13,15 +18,32 @@
     padding: 0 var(--container-offset);
     margin: 0 auto;
     height: 70rem;
-    background-color: #ccc;
+
     overflow: hidden;
     position: relative;
-    mask-image: url("./../img/map-mask.svg");
-    mask-size: 100% 100%;
-    mask-repeat: no-repeat;
-    mask-position: center;
+
     @include mobile {
-      height: 89.6rem;
+      height: auto;
+    }
+
+    &-map {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      mask-image: url("./../img/map-mask.svg");
+      mask-size: 100% 100%;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      background-color: #ccc;
+      @include mobile {
+        height: 56.2rem;
+        position: relative;
+        margin: 0 calc(-1 * var(--container-offset));
+        width: auto;
+        mask-image: url("./../img/map-mask-mob.svg");
+      }
     }
   }
 
@@ -34,10 +56,12 @@
     bottom: 8.3rem;
 
     @include mobile {
+      position: relative;
       top: unset;
       bottom: 0;
       left: 0;
       right: 0;
+      margin: 0 calc(-1 * var(--container-offset));
     }
   }
 }
@@ -51,7 +75,7 @@
   overflow: hidden;
   @include mobile {
     mask: none;
-    width: 100%;
+    width: auto;
   }
   &__img {
     width: 100%;
@@ -70,8 +94,7 @@
     padding-top: 3.2rem;
 
     @include mobile {
-      padding: 4rem 4.2rem;
-      padding-bottom: 3.5rem;
+      padding: 3.6rem 4rem 4rem;
     }
   }
 
@@ -81,7 +104,11 @@
     font-weight: 500;
     font-size: 2rem;
     line-height: 120%;
-    color: var(--black);
+    color: var(--bereg-black);
+    @include mobile {
+      font-size: 2.2rem;
+      margin-bottom: 2.5rem;
+    }
   }
 
   &__buttons {
@@ -100,7 +127,7 @@
   position: relative;
 
   @include mobile {
-    margin-bottom: 1rem;
+    margin-bottom: 2.2rem;
   }
   &__input {
     display: block;
@@ -114,21 +141,20 @@
     font-weight: 300;
     font-size: 2rem;
     line-height: 150%;
-    color: rgba(0, 0, 0, 0.25);
+    color: var(--bereg-black);
     @include mobile {
-      height: 6rem;
-      margin-bottom: 1.2rem;
-      padding-left: 1.8rem;
-      padding-bottom: 0.9rem;
-    }
-    &::placeholder {
-      color: var(--base-grey);
+      margin-bottom: 1.9rem;
     }
   }
 
   &__btn {
     display: flex;
     width: 100%;
+
+    @include mobile {
+      font-size: 2rem;
+      padding: 1.8rem;
+    }
   }
 }
 

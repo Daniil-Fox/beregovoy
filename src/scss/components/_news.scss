@@ -1,13 +1,26 @@
 .news {
   padding: 16.5rem 0;
-
+  @include mobile {
+    padding: 8.4rem 0;
+  }
   &__header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 9rem;
-  }
 
+    @include mobile {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.9rem;
+      margin-bottom: 3.5rem;
+    }
+  }
+  &__title {
+    @include mobile {
+      letter-spacing: 0em;
+    }
+  }
   &__subtitle {
     color: var(--bereg-black);
   }
@@ -24,15 +37,26 @@
     padding-top: 1.8rem;
     padding-bottom: 1.3rem;
     min-width: 29rem;
+
+    @include mobile {
+      display: flex;
+      width: 100%;
+      padding: 1.8rem 1rem;
+    }
   }
 }
 
 .news-item {
   $cards-per-row: 3;
+  $cards-per-row-mob: 1;
   $gap: 4rem;
   width: calc((100% - (#{$cards-per-row - 1} * #{$gap})) / #{$cards-per-row});
   position: relative;
-
+  @include mobile {
+    width: calc(
+      (100% - (#{$cards-per-row-mob - 1} * #{$gap})) / #{$cards-per-row-mob}
+    );
+  }
   &__link {
     position: absolute;
     left: 0;
@@ -51,6 +75,10 @@
       content: "";
       display: block;
       padding-top: 52.5%;
+
+      @include mobile {
+        padding-top: 58.4%;
+      }
     }
 
     img {
@@ -61,11 +89,17 @@
       height: 100%;
     }
   }
-
+  &__capture {
+    @include mobile {
+      font-size: 2.2rem;
+    }
+  }
   &__info {
     position: relative;
     padding: 3.9rem 4.3rem;
-
+    @include mobile {
+      padding: 3.7rem 4.3rem 3.3rem;
+    }
     &::before {
       content: "";
       position: absolute;

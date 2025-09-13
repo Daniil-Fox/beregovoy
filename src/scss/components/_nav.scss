@@ -8,6 +8,9 @@
     gap: 3rem;
 
     li {
+      &:not(:last-child) {
+        margin: 0;
+      }
       a {
         margin: 0;
         font-weight: 500;

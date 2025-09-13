@@ -1,14 +1,25 @@
 .gallery {
   padding: 12rem 0 16rem;
-
+  @include mobile {
+    padding: 7.6rem 0 1.3rem;
+  }
   &__title {
     margin-bottom: 8.8rem;
+
+    @include mobile {
+      margin-bottom: 5rem;
+    }
   }
 
   &__items {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 4rem;
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
   }
 }
 
@@ -19,6 +30,10 @@
   flex-direction: column;
   justify-content: flex-end;
   background-color: var(--bereg-white);
+  overflow: hidden;
+  @include mobile {
+    height: 53rem;
+  }
   &__slider {
     position: absolute;
     left: 0;
@@ -30,12 +45,29 @@
 
     cursor: zoom-in;
   }
+  &__capture {
+    @include mobile {
+      font-size: 2.4rem;
+    }
+  }
   &__img {
     position: relative;
+    flex-shrink: 0;
+    @include mobile {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
     &::before {
       content: "";
       display: block;
       padding-top: 59.9%;
+
+      @include mobile {
+        display: none;
+      }
     }
     img {
       position: absolute;
@@ -69,13 +101,22 @@
       mask-image: url("./../img/svg/gallery-mask.svg");
       mask-size: contain;
       mask-repeat: no-repeat;
-      mask-position: left bottom;
+      mask-position: bottom left;
+
+      @include mobile {
+        mask-image: url("./../img/svg/gallery-mask-mob.svg");
+        height: 2rem;
+      }
     }
   }
 
   &__control {
     display: flex;
     gap: 1.8rem;
+
+    @include mobile {
+      gap: 6rem;
+    }
   }
 
   &__arr {
@@ -110,6 +151,24 @@
   &:nth-child(4n + 3) {
     .g-item__content::before {
       transform: rotateY(180deg);
+      left: unset;
+    }
+  }
+
+  @include mobile {
+    &:nth-child(odd) {
+      .g-item__content::before {
+        transform: none;
+        right: unset;
+        left: 0;
+      }
+    }
+    &:nth-child(even) {
+      .g-item__content::before {
+        transform: rotateY(180deg);
+        left: unset;
+        right: 0px;
+      }
     }
   }
 }

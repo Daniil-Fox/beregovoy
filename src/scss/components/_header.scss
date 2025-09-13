@@ -6,6 +6,22 @@
   position: relative;
   transition-property: transform;
   transition-duration: 0.3s;
+  @include mobile {
+    padding: 2rem 0;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: calc(100% - 1px);
+      height: 1.4rem;
+      width: 100%;
+      background-color: var(--bereg-white);
+      mask-image: url("./../img/svg/header-mask.svg");
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      mask-position: left top;
+    }
+  }
   &__container {
     display: flex;
     align-items: center;
@@ -16,13 +32,26 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+    @include mobile {
+      display: none;
+    }
   }
 
   & > svg {
     position: absolute;
-    top: 100%;
-    left: 0rem;
+    top: calc(100% - 1px);
+    left: -40rem;
     width: auto;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__nav {
+    @include mobile {
+      display: none;
+    }
   }
 }
 
@@ -37,4 +66,12 @@
 
 .header--hidden {
   transform: translateY(-200%);
+}
+
+.burger {
+  @include burger;
+  display: none;
+  @include mobile {
+    display: block;
+  }
 }

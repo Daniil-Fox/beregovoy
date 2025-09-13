@@ -1,12 +1,21 @@
 .building {
   padding: 12rem 0 16rem;
-
+  @include mobile {
+    padding: 7.6rem 0 1.3rem;
+  }
   &__title {
     margin-bottom: 8.8rem;
+
+    @include mobile {
+      margin-bottom: 8rem;
+    }
   }
 
   &__items {
     .g-item {
+      @include mobile {
+        margin-bottom: 4rem;
+      }
       &:nth-child(3n + 1),
       &:nth-child(3n + 2) {
         .g-item__content::before {
@@ -19,6 +28,17 @@
           transform: rotateY(0deg);
         }
       }
+
+      &:nth-child(odd) {
+        .g-item__content::before {
+          transform: rotateY(0deg);
+        }
+      }
+      &:nth-child(even) {
+        .g-item__content::before {
+          transform: rotateY(180deg);
+        }
+      }
     }
   }
 
@@ -29,7 +49,10 @@
     padding-bottom: 5rem;
     margin-bottom: 9.8rem;
     position: relative;
-
+    @include mobile {
+      padding: 5.5rem 6rem;
+      margin-bottom: 0;
+    }
     &::after {
       content: "";
       position: absolute;
@@ -44,11 +67,25 @@
       mask-size: contain;
       mask-position: left top;
       mask-repeat: no-repeat;
+
+      @include mobile {
+        height: 3rem;
+        mask-image: url("./../img/svg/more-mask-mob.svg");
+        top: unset;
+        bottom: calc(100% - 1px);
+        transform: rotateY(180deg);
+        mask-position: right top;
+      }
     }
   }
   &__capture {
     margin-bottom: 3.4rem;
     line-height: 120%;
     letter-spacing: 0.03em;
+
+    @include mobile {
+      font-size: 2.4rem;
+      margin-bottom: 3rem;
+    }
   }
 }

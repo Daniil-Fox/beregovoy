@@ -1,8 +1,15 @@
 .choice {
   padding: 14.2rem 0;
+  @include mobile {
+    padding: 8.3rem 0;
+  }
   &__container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__content {
@@ -10,7 +17,10 @@
     padding: 9.5rem 10rem;
     padding-bottom: 6.5rem;
     position: relative;
-
+    @include mobile {
+      padding: 5.5rem 6rem;
+      padding-bottom: 5.8rem;
+    }
     &::after {
       content: "";
       position: absolute;
@@ -24,11 +34,25 @@
       mask-size: contain;
       mask-position: top left;
       mask-repeat: no-repeat;
+
+      @include mobile {
+        height: 3rem;
+        mask-image: url("./../img/svg/more-mask-mob.svg");
+        top: unset;
+        bottom: calc(100% - 1px);
+        transform: rotateY(180deg);
+        mask-position: right top;
+      }
     }
   }
 
   &__title {
     margin-bottom: 3rem;
+
+    @include mobile {
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+    }
   }
   &__btn {
     display: flex;
@@ -36,13 +60,18 @@
     font-size: 2rem;
     padding-top: 1.7rem;
     padding-bottom: 1.3rem;
-
+    @include mobile {
+      padding: 1.9rem 0;
+    }
     &::after {
       width: 20%;
     }
   }
   &__desc {
     margin-bottom: 4.1rem;
+    @include mobile {
+      margin-bottom: 3.1rem;
+    }
     p {
       margin: 0;
       &:not(:last-child) {
@@ -53,7 +82,13 @@
 
   &__img {
     position: relative;
-
+    @include mobile {
+      &::after {
+        content: "";
+        display: block;
+        padding-top: 90.3%;
+      }
+    }
     img {
       position: absolute;
       left: 0;

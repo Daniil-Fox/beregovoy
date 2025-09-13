@@ -1,6 +1,8 @@
 .more-info {
   padding: 15.5rem 0;
-
+  @include mobile {
+    padding: 12.6rem 0;
+  }
   &__container {
     max-width: calc(192rem + var(--container-offset) * 2);
     position: relative;
@@ -8,16 +10,35 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    @include mobile {
+      height: 102.4rem;
+      align-items: flex-end;
+      padding: 12.6rem 4.6rem;
+    }
   }
   &__content {
     padding: 5.5rem 6rem;
     background-color: var(--bereg-white);
     min-width: 73.2rem;
+
+    @include mobile {
+      min-width: unset;
+      width: 100%;
+      padding-top: 5rem;
+      padding-bottom: 6.1rem;
+    }
   }
   &__title {
     max-width: 57rem;
     margin: 0 auto;
     margin-bottom: 3.6rem;
+
+    @include mobile {
+      margin-bottom: 3.1rem;
+      font-size: 3rem;
+      line-height: 130%;
+      letter-spacing: 0.03em;
+    }
   }
   &__img {
     position: absolute;
@@ -33,7 +54,33 @@
     mask-position: center;
 
     min-height: 48.6rem;
+    @include mobile {
+      min-height: 0;
+      height: 100%;
+      mask: none;
 
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        left: -1px;
+        top: -1px;
+        height: 2.5rem;
+        width: 100%;
+        background-color: #f7f7f7;
+        mask-image: url("./../img/svg/more-info-fig1.svg");
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: left top;
+      }
+      &::after {
+        top: unset;
+        left: unset;
+        right: -1px;
+        bottom: -1px;
+        transform: rotateY(180deg) rotateX(180deg);
+      }
+    }
     img {
       display: block;
       width: 100%;
@@ -46,7 +93,9 @@
     width: 100%;
     padding: 1.6rem 1rem 1.4rem;
     position: relative;
-
+    @include mobile {
+      padding: 1.8rem;
+    }
     &::after {
       width: 23.7%;
       height: 0.8rem;

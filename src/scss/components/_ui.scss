@@ -6,6 +6,10 @@
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--bereg-accent);
+  @include mobile {
+    font-size: 7.2rem;
+    line-height: 110%;
+  }
 }
 .title-xml {
   margin: 0;
@@ -15,6 +19,11 @@
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--bereg-accent);
+
+  @include mobile {
+    font-size: 4.6rem;
+    line-height: 110%;
+  }
 }
 .title-xl {
   margin: 0;
@@ -24,6 +33,9 @@
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--bereg-accent);
+  @include mobile {
+    font-size: 4.6rem;
+  }
 }
 .title-md {
   margin: 0;
@@ -48,6 +60,10 @@
   font-size: 2.4rem;
   line-height: 150%;
   color: var(--bereg-black);
+
+  @include mobile {
+    font-size: 2rem;
+  }
 }
 
 .desc2 {
@@ -109,7 +125,9 @@ ol {
   font-size: 2.2rem;
   line-height: 120%;
   color: var(--bereg-black);
-
+  @include mobile {
+    margin-bottom: 3.1rem;
+  }
   svg {
     width: 1.2rem;
     height: 1.8rem;
@@ -163,6 +181,10 @@ ol {
       mask-size: cover;
       mask-repeat: no-repeat;
       mask-position: var(--btn-mask-x, 0%) 100%;
+
+      @include mobile {
+        display: none;
+      }
     }
 
     @include hover {
@@ -271,7 +293,7 @@ ol {
   display: inline-flex;
   align-items: center;
   gap: 1.1rem;
-  width: 23.5rem;
+
   position: relative;
   height: 3.7rem;
 
@@ -280,11 +302,20 @@ ol {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--bereg-black);
+
+  @include mobile {
+    font-size: 2.55rem;
+    height: auto;
+  }
   svg {
     display: block;
     width: 2.9rem;
     fill: currentColor;
     transition: fill 0.3s ease-in;
+
+    @include mobile {
+      width: 2.5rem;
+    }
   }
 
   @include hover {
@@ -311,8 +342,8 @@ ol {
   --swiper-pagination-color: var(--bereg-white);
   --swiper-pagination-bullet-inactive-opacity: 0.7;
   --swiper-pagination-bullet-inactive-color: var(--bereg-white);
-  --swiper-pagination-bullet-width: 1.1rem;
-  --swiper-pagination-bullet-height: 1.1rem;
+  --swiper-pagination-bullet-width: 1rem;
+  --swiper-pagination-bullet-height: 1rem;
   --swiper-pagination-bullet-horizontal-gap: 0.5rem;
   position: static;
   width: auto !important;
@@ -356,7 +387,10 @@ ol {
   position: relative;
 
   cursor: pointer;
-
+  @include mobile {
+    width: 2rem;
+    height: 3.5rem;
+  }
   &::before {
     content: "";
     position: absolute;
@@ -426,56 +460,7 @@ ol {
 .suggestion-item:hover {
   background-color: #f0f0f0;
 }
-// .custom-zoom-container {
-//   display: flex;
-//   flex-direction: column;
-//   gap: 0.6rem;
-//   align-items: center;
-//   position: absolute;
-//   z-index: 10;
-//   top: 50%;
-//   right: 5.2rem;
-//   transform: translateY(-50%);
-//   @include mobile {
-//     top: 4.4rem;
-//     right: 4.2rem;
-//     transform: none;
-//   }
-// }
 
-// .custom-zoom-button {
-//   background-color: #fff;
-//   border: 1px solid #ccc;
-//   border-radius: 1rem;
-//   width: 4rem;
-//   aspect-ratio: 1 / 1;
-//   cursor: pointer;
-//   flex-shrink: 0;
-//   text-align: center;
-//   border: none;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   box-shadow: 0 4px 10rem rgba(#000, 0.05);
-//   svg {
-//     display: block;
-//     width: 1.8rem;
-//     height: 1.8rem;
-//     flex-shrink: 0;
-//   }
-//   @include mobile {
-//     width: 6rem;
-//     height: 6rem;
-//   }
-// }
-
-// .custom-zoom-button:hover {
-//   background-color: #f0f0f0;
-// }
-
-// .custom-zoom-button:active {
-//   background-color: #e0e0e0;
-// }
 [class*="copyrights-pane"] {
   display: none !important;
 }
@@ -499,6 +484,10 @@ ol {
   h1 {
     font-size: 3.2rem;
     margin-bottom: 1.2rem;
+
+    @include mobile {
+      font-size: 4rem;
+    }
   }
 
   time {
@@ -529,23 +518,35 @@ ol {
 
   figure {
     margin: 0;
+    margin-top: 10rem;
+    @include mobile {
+      margin-top: 6rem;
+    }
     &:not(:last-child) {
       margin-bottom: 10rem;
+
+      @include mobile {
+        margin-bottom: 6rem;
+      }
     }
-    margin-top: 10rem;
     img,
     video {
       width: 100%;
       height: auto;
       display: block;
-      border-radius: 1.2rem;
       box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
       background: #eee;
     }
     video {
       background: #000;
-      min-height: 320px;
+      min-height: 32rem;
       position: relative;
+      aspect-ratio: 16 / 9;
+
+      @include mobile {
+        width: 100%;
+        min-height: unset;
+      }
     }
 
     video,

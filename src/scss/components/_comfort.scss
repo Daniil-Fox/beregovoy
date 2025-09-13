@@ -1,17 +1,36 @@
 .comfort {
   padding: 14rem 0;
-
+  @include mobile {
+    padding: 1.6rem 0;
+  }
+  &__title {
+    @include mobile {
+      line-height: 110%;
+      margin-bottom: 0.7rem;
+    }
+  }
   &__header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 9rem;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 5.6rem;
+    }
   }
 
   &__items {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 4rem;
+
+    @include mobile {
+      display: flex;
+      gap: 0;
+    }
   }
 }
 
@@ -20,12 +39,24 @@
   flex-direction: column;
   min-height: 36rem;
   height: auto;
+
+  @include mobile {
+    min-height: unset;
+    height: auto;
+    width: 89.2%;
+  }
   &__img {
     position: relative;
+    z-index: 2;
     mask-image: url("./../img/svg/comfort-mask-1.svg");
     mask-size: 100% 100%;
     mask-repeat: no-repeat;
     mask-position: bottom;
+
+    @include mobile {
+      mask: none;
+      height: 60.5rem;
+    }
     &::before {
       content: "";
       padding-top: 38%;
@@ -39,12 +70,57 @@
       width: 100%;
       height: 100%;
     }
+
+    &-wrap {
+      @include mobile {
+        position: relative;
+
+        &::before,
+        &::after {
+          content: "";
+          background-color: #f5f5f5;
+          mask-image: url("./../img/comfort/mask.svg");
+          mask-size: contain;
+          mask-repeat: no-repeat;
+          mask-position: left top;
+          position: absolute;
+          z-index: 2;
+          top: -1px;
+          left: -1px;
+          right: -1px;
+          height: 3.2rem;
+          transform: rotateX(180deg) rotateY(180deg);
+        }
+        &::after {
+          transform: none;
+          top: unset;
+          background-color: var(--bereg-white);
+          bottom: -1px;
+        }
+      }
+    }
   }
 
   &__content {
     flex-grow: 1;
     padding: 3.9rem 4.3rem;
     background-color: var(--bereg-white);
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: calc(100% - 1px);
+      width: 100%;
+      height: 3rem;
+      background-color: var(--bereg-white);
+      @include mobile {
+        display: none;
+      }
+    }
+    @include mobile {
+      padding-bottom: 5.5rem;
+    }
   }
 
   &__fig {
@@ -56,7 +132,11 @@
     text-transform: uppercase;
     color: var(--bereg-accent);
   }
-
+  &__desc {
+    @include mobile {
+      font-size: 2.2rem;
+    }
+  }
   &:nth-child(2),
   &:nth-child(4),
   &:nth-child(5),
@@ -69,6 +149,10 @@
   &:nth-child(18) {
     .comfort-item__img {
       mask-image: url("./../img/svg/comfort-mask-2.svg");
+
+      @include mobile {
+        mask: none;
+      }
     }
   }
 }

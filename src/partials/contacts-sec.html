@@ -25,11 +25,9 @@
               <a href="tel:+79140688448" class="link-btn">+7 914 068 84 48</a>
             </p>
             <p>
-              <a href="mailto:sz-beregovoi@mail.ru" class="link-btn"
-                >sz-beregovoi@mail.ru</a
-              >
+              <a href="mailto:sz-beregovoi@mail.ru" class="link-btn">sz-beregovoi@mail.ru</a>
             </p>
-            <p>Боль­шой ка­мень, ул. Кар­ла Мар­кса, д.31, офис 1</p>
+            <p>Боль­шой ка­мень, ул.&nbsp;Кар­ла&nbsp;Мар­кса,&nbsp;д.31,&nbsp;офис 1</p>
           </address>
         </div>
         <div class="contacts__map" id="map3"></div>
@@ -39,8 +37,8 @@
           <p class="contacts__capture subtitle-xl">расположение жк</p>
           <address class="contacts__address desc2">
             <p>
-              Приморский край, Надеждинский район,<br />
-              пос. Тавричанка, ул. 60 лет ВЛКСМ
+              Приморский край, Надеждинский район,
+              пос.&nbsp;Тавричанка, ул.&nbsp;60&nbsp;лет&nbsp;ВЛКСМ
             </p>
           </address>
         </div>
@@ -54,15 +52,15 @@
   ymaps.ready(function () {
     const ourCompany = [43.109836, 132.349806];
     const myMap = new ymaps.Map(
-        "map3",
-        {
-          center: ourCompany,
-          zoom: 16,
-        },
-        {
-          searchControlProvider: "yandex#search",
-        }
-      ),
+      "map3",
+      {
+        center: ourCompany,
+        zoom: 16,
+      },
+      {
+        searchControlProvider: "yandex#search",
+      }
+    ),
       myPlacemark = new ymaps.Placemark(
         myMap.getCenter(),
         {},

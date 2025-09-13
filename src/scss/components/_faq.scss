@@ -1,17 +1,32 @@
 .faq {
   padding: 14rem 0;
+  @include mobile {
+    padding: 6rem 0;
+  }
   &__title {
     margin-bottom: 9rem;
+
+    @include mobile {
+      line-height: 110%;
+      margin-bottom: 5rem;
+    }
   }
   &__items {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 4rem;
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: 2.1rem;
+    }
   }
   &__col {
     display: flex;
     flex-direction: column;
     gap: 4rem;
+    @include mobile {
+      gap: 2.1rem;
+    }
   }
 }
 
@@ -23,6 +38,9 @@
   background-color: var(--bereg-white);
   transition: min-height 0.3s ease;
   will-change: min-height;
+  @include mobile {
+    padding: 3.1rem 3rem;
+  }
   &__header {
     display: flex;
     align-items: center;
@@ -40,6 +58,10 @@
   &__capture {
     color: var(--bereg-black);
     text-align: left;
+
+    @include mobile {
+      font-size: 2.2rem;
+    }
   }
 
   &__btn {
@@ -66,23 +88,16 @@
     padding-top: 4rem;
     color: var(--bereg-black);
     font-size: 2rem;
-
+    font-weight: 300;
+    @include mobile {
+      font-size: 1.8rem;
+    }
     p {
       margin: 0;
 
       &:not(:last-child) {
         margin-bottom: 1em;
       }
-    }
-  }
-
-  // Мобильная версия
-  @media (max-width: 576px) {
-    padding: 3rem 2rem;
-
-    &__text {
-      padding-top: 2rem;
-      font-size: 1.8rem;
     }
   }
 

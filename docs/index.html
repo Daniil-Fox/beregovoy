@@ -72,9 +72,18 @@
   <div class="container">
     <div class="header__container">
       <a href="./" class="logo header__logo">
-        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd"
-            d="M8.39299 1.63079C10.9493 0.55446 13.6949 0 16.4685 0H25.9091V6.81818H16.4685C14.6037 6.81818 12.7576 7.19099 11.0388 7.91467C8.48256 8.991 5.7369 9.54545 2.96326 9.54545H0V2.72727H2.96326C4.82816 2.72727 6.67424 2.35447 8.39299 1.63079ZM8.39299 11.8581C10.9493 10.7817 13.6949 10.2273 16.4685 10.2273H20.8916C25.5454 10.2273 29.3182 14 29.3182 18.6539V18.8461C29.3182 23.5 25.5454 27.2727 20.8916 27.2727H16.4685C14.6037 27.2727 12.7576 27.6455 11.0388 28.3692C8.48256 29.4455 5.7369 30 2.96326 30H0V23.1818H2.96326C4.82816 23.1818 6.67424 22.809 8.39299 22.0853C10.9493 21.009 13.6949 20.4545 16.4685 20.4545H20.8916C21.7799 20.4545 22.5 19.7344 22.5 18.8461V18.6539C22.5 17.7656 21.7799 17.0455 20.8916 17.0455H16.4685C14.6037 17.0455 12.7576 17.4183 11.0388 18.142C8.48256 19.2183 5.7369 19.7727 2.96326 19.7727H0V12.9545H2.96326C4.82816 12.9545 6.67424 12.5817 8.39299 11.8581Z" />
+        <svg
+          width="30"
+          height="30"
+          viewBox="0 0 30 30"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.39299 1.63079C10.9493 0.55446 13.6949 0 16.4685 0H25.9091V6.81818H16.4685C14.6037 6.81818 12.7576 7.19099 11.0388 7.91467C8.48256 8.991 5.7369 9.54545 2.96326 9.54545H0V2.72727H2.96326C4.82816 2.72727 6.67424 2.35447 8.39299 1.63079ZM8.39299 11.8581C10.9493 10.7817 13.6949 10.2273 16.4685 10.2273H20.8916C25.5454 10.2273 29.3182 14 29.3182 18.6539V18.8461C29.3182 23.5 25.5454 27.2727 20.8916 27.2727H16.4685C14.6037 27.2727 12.7576 27.6455 11.0388 28.3692C8.48256 29.4455 5.7369 30 2.96326 30H0V23.1818H2.96326C4.82816 23.1818 6.67424 22.809 8.39299 22.0853C10.9493 21.009 13.6949 20.4545 16.4685 20.4545H20.8916C21.7799 20.4545 22.5 19.7344 22.5 18.8461V18.6539C22.5 17.7656 21.7799 17.0455 20.8916 17.0455H16.4685C14.6037 17.0455 12.7576 17.4183 11.0388 18.142C8.48256 19.2183 5.7369 19.7727 2.96326 19.7727H0V12.9545H2.96326C4.82816 12.9545 6.67424 12.5817 8.39299 11.8581Z"
+          />
         </svg>
 
         Береговой
@@ -111,33 +120,58 @@
           Выбрать квартиру
         </a>
       </div>
+      <button
+        class="btn-reset burger header__burger"
+        aria-label="Открыть меню"
+        aria-expanded="false"
+        data-burger
+      >
+        <span class="burger__line"></span>
+      </button>
     </div>
   </div>
-  <svg width="1030" height="25" viewBox="0 0 1030 25" fill="none" xmlns="http://www.w3.org/2000/svg"
-    class="wave header__wave">
-    <path d="M201.5 0C201.5 0 421.222 24.7563 509 24.7563C640.694 24.7563 724.232 0 856 0H201.5Z" fill="#FEFEFE" />
+  <svg
+    width="1118"
+    height="25"
+    viewBox="0 0 1118 25"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    class="wave header__wave"
+  >
+    <path
+      d="M218.715 0C218.715 0 325.5 25 552.487 25C831 25 786.109 0 929.134 0H218.715Z"
+      fill="#FEFEFE"
+    />
   </svg>
-
-
 </header>
+
       <main class="main">
         <section class="hero">
   <div class="container">
     <h1 class="title-xxl hero__title">жилой комплекс береговой</h1>
     <div class="hero__container">
+      <p class="hero__desc hero__desc_top-left desc1">
+        Погрузитесь в атмосферу гармонии и современного стиля, где природа
+        встречается с&nbsp;городской&nbsp;жизнью.
+      </p>
       <div class="hero__img">
         <picture>
-          <source srcset="./img/hero.webp" media="(max-width: 600px)" type="image/webp">
-          <img src="./img/hero.webp" width="1920" height="600" alt="">
+          <source
+            srcset="./img/hero-mob.webp"
+            media="(max-width: 600px)"
+            type="image/webp"
+          />
+          <img src="./img/hero.webp" width="1920" height="600" alt="" />
         </picture>
       </div>
-      <p class="hero__desc hero__desc_top-left desc1">
-        Погрузитесь в атмосферу гармонии и современного стиля, где природа встречается с городской жизнью.
+
+      <p class="hero__desc hero__desc_bottom-right desc1">
+        Большой камень, ул. Ленина, д. 14
       </p>
-      <p class="hero__desc hero__desc_bottom-right desc1">Большой камень, ул. Ленина, д. 14</p>
     </div>
   </div>
-</section> <section class="about">
+</section>
+ <section class="about">
   <div class="container">
     <div class="about__container">
       <div class="about__content">
@@ -315,29 +349,23 @@
   <div class="container">
     <h2 class="title-xl centered place__title">Расположение</h2>
   </div>
-  <div class="place__map" id="map">
+  <div class="place__map">
+    <div class="place__map-map" id="map"></div>
     <div class="place__content place-content">
       <div class="place-content__img">
         <img src="./img/place.webp" alt="" />
       </div>
       <div class="place-content__content">
         <p class="place-content__address">
-          Приморский край, Надеждинский район, пос. Тавричанка, ул. 60 лет ВЛКСМ
+          Приморский край, Надеждинский район, пос.&nbsp;Тавричанка, ул. 60 лет
+          ВЛКСМ
         </p>
 
         <form class="place-content__form place-form">
-          <input
-            type="text"
-            placeholder="Введите ваш адрес"
-            class="place-form__input"
-            id="address"
-            autocomplete="off"
-          />
+          <input type="text" placeholder="Введите ваш адрес" class="place-form__input" id="address"
+            autocomplete="off" />
           <div id="suggestions"></div>
-          <button
-            class="btn-reset btn btn_small place-form__btn btn_gray"
-            disabled
-          >
+          <button class="btn-reset btn btn_small place-form__btn" disabled>
             Проложить маршрут
           </button>
         </form>
@@ -351,19 +379,6 @@
         </div>
       </div>
     </div>
-
-    <!-- <div id="zoom-controls" class="custom-zoom-container">
-      <button id="zoom-in" class="custom-zoom-button">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M1.5 9H16.5M9 1.5V16.5" stroke="black" stroke-width="2" stroke-linecap="round" />
-        </svg>
-      </button>
-      <button id="zoom-out" class="custom-zoom-button">
-        <svg width="18" height="3" viewBox="0 0 18 3" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M1.5 1.66663H16.5" stroke="black" stroke-width="2" stroke-linecap="round" />
-        </svg>
-      </button>
-    </div> -->
   </div>
 </section>
 <script>
@@ -374,15 +389,15 @@
     let markers = [];
     let multiRoute;
     var myMap = new ymaps.Map(
-        "map",
-        {
-          center: ourCompany,
-          zoom: 14,
-        },
-        {
-          searchControlProvider: "yandex#search",
-        }
-      ),
+      "map",
+      {
+        center: ourCompany,
+        zoom: 14,
+      },
+      {
+        searchControlProvider: "yandex#search",
+      }
+    ),
       myPlacemark = new ymaps.Placemark(
         myMap.getCenter(),
         {},
@@ -418,7 +433,7 @@
           btn.setAttribute("disabled", "");
         }
       }
-      input.addEventListener("input", () => {
+      input.addEventListener("input", (e) => {
         checkDisabled();
         let query = input.value;
 
@@ -426,7 +441,7 @@
           suggestionsDiv.style.display = "none";
           return;
         }
-        query = "Владивосток, " + query;
+        query = "Большой камент, " + query;
         fetch(
           "https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address",
           {
@@ -643,7 +658,7 @@
               <p>
                 Площади квартир варьируются
                 от&nbsp;35,1&nbsp;до&nbsp;79,7&nbsp;м², удовлетворяя потребности
-                как&nbsp;небольших семей, так&nbsp;и&nbsp;тех,
+                как&nbsp;небольших семей,&nbsp;так&nbsp;и&nbsp;тех,
                 кто&nbsp;предпочитает более просторное жильё. Комплекс
                 предоставляет возможность объединения квартир для&nbsp;создания
                 ещё&nbsp;более просторного и&nbsp;функционального пространства,
@@ -797,224 +812,153 @@
         <section class="comfort">
   <div class="container">
     <div class="comfort__header">
-      <h2 class="title-xl comfrot__title">Комфорт на брегу залива</h2>
+      <h2 class="title-xl comfort__title">Комфорт на&nbsp;брегу&nbsp;залива</h2>
       <div class="comfort__label subtitle-xl">Преимущества</div>
     </div>
 
-    <div class="comfort__items">
-      <div class="comfort__item comfort-item">
-        <div class="comfort-item__img">
-          <picture>
-            <source
-              srcset="./img/comfort/01-mob.webp"
-              media="(max-width: 600px)"
-              type="image/webp"
-            />
-            <img
-              loading="lazy"
-              src="./img/comfort/01.webp"
-              class="image"
-              width="420"
-              height="160"
-              alt=""
-            />
-          </picture>
-        </div>
-        <div class="comfort-item__content">
-          <div class="comfort-item__fig">01</div>
-          <div class="comfort-item__desc desc3">
-            Продуманные планировки квартир с большой полезной площадью
+    <div class="comfort__slider">
+      <div class="comfort__items swiper-wrapper">
+        <div class="swiper-slide comfort__item comfort-item">
+          <div class="comfort-item__img-wrap">
+            <div class="comfort-item__img">
+              <picture>
+                <source srcset="./img/comfort/01-mob.webp" media="(max-width: 600px)" type="image/webp" />
+                <img loading="lazy" src="./img/comfort/01.webp" class="image" width="420" height="160" alt="" />
+              </picture>
+            </div>
+          </div>
+          <div class="comfort-item__content">
+            <div class="comfort-item__fig">01</div>
+            <div class="comfort-item__desc desc3">
+              Продуманные планировки квартир с большой полезной площадью
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="comfort__item comfort-item">
-        <div class="comfort-item__img">
-          <picture>
-            <source
-              srcset="./img/comfort/02-mob.webp"
-              media="(max-width: 600px)"
-              type="image/webp"
-            />
-            <img
-              loading="lazy"
-              src="./img/comfort/02.webp"
-              class="image"
-              width="420"
-              height="160"
-              alt=""
-            />
-          </picture>
-        </div>
-        <div class="comfort-item__content">
-          <div class="comfort-item__fig">02</div>
-          <div class="comfort-item__desc desc3">
-            Возможность объединения квартир.
+        <div class="swiper-slide comfort__item comfort-item">
+          <div class="comfort-item__img-wrap">
+            <div class="comfort-item__img">
+              <picture>
+                <source srcset="./img/comfort/02-mob.webp" media="(max-width: 600px)" type="image/webp" />
+                <img loading="lazy" src="./img/comfort/02.webp" class="image" width="420" height="160" alt="" />
+              </picture>
+            </div>
+          </div>
+          <div class="comfort-item__content">
+            <div class="comfort-item__fig">02</div>
+            <div class="comfort-item__desc desc3">
+              Возможность объединения квартир.
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="comfort__item comfort-item">
-        <div class="comfort-item__img">
-          <picture>
-            <source
-              srcset="./img/comfort/03-mob.webp"
-              media="(max-width: 600px)"
-              type="image/webp"
-            />
-            <img
-              loading="lazy"
-              src="./img/comfort/03.webp"
-              class="image"
-              width="420"
-              height="160"
-              alt=""
-            />
-          </picture>
-        </div>
-        <div class="comfort-item__content">
-          <div class="comfort-item__fig">03</div>
-          <div class="comfort-item__desc desc3">
-            Железобетонный монолит&nbsp;&mdash; надёжность и&nbsp;долговечность
-            конструкции
+        <div class="swiper-slide comfort__item comfort-item">
+          <div class="comfort-item__img-wrap">
+            <div class="comfort-item__img">
+              <picture>
+                <source srcset="./img/comfort/03-mob.webp" media="(max-width: 600px)" type="image/webp" />
+                <img loading="lazy" src="./img/comfort/03.webp" class="image" width="420" height="160" alt="" />
+              </picture>
+            </div>
+          </div>
+          <div class="comfort-item__content">
+            <div class="comfort-item__fig">03</div>
+            <div class="comfort-item__desc desc3">
+              Железобетонный монолит&nbsp;&mdash; надёжность и&nbsp;долговечность
+              конструкции
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="comfort__item comfort-item">
-        <div class="comfort-item__img">
-          <picture>
-            <source
-              srcset="./img/comfort/04-mob.webp"
-              media="(max-width: 600px)"
-              type="image/webp"
-            />
-            <img
-              loading="lazy"
-              src="./img/comfort/04.webp"
-              class="image"
-              width="420"
-              height="160"
-              alt=""
-            />
-          </picture>
-        </div>
-        <div class="comfort-item__content">
-          <div class="comfort-item__fig">04</div>
-          <div class="comfort-item__desc desc3">
-            Фасад из&nbsp;керамогранита, адаптированного к&nbsp;приморскому
-            климату.
+        <div class="swiper-slide comfort__item comfort-item">
+          <div class="comfort-item__img-wrap">
+            <div class="comfort-item__img">
+              <picture>
+                <source srcset="./img/comfort/04-mob.webp" media="(max-width: 600px)" type="image/webp" />
+                <img loading="lazy" src="./img/comfort/04.webp" class="image" width="420" height="160" alt="" />
+              </picture>
+            </div>
+          </div>
+          <div class="comfort-item__content">
+            <div class="comfort-item__fig">04</div>
+            <div class="comfort-item__desc desc3">
+              Фасад из&nbsp;керамогранита, адаптированного к&nbsp;приморскому
+              климату.
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="comfort__item comfort-item">
-        <div class="comfort-item__img">
-          <picture>
-            <source
-              srcset="./img/comfort/05-mob.webp"
-              media="(max-width: 600px)"
-              type="image/webp"
-            />
-            <img
-              loading="lazy"
-              src="./img/comfort/05.webp"
-              class="image"
-              width="420"
-              height="160"
-              alt=""
-            />
-          </picture>
-        </div>
-        <div class="comfort-item__content">
-          <div class="comfort-item__fig">05</div>
-          <div class="comfort-item__desc desc3">
-            Уникальные квартиры с отдельными входами на первом этаже
+        <div class="swiper-slide comfort__item comfort-item">
+          <div class="comfort-item__img-wrap">
+            <div class="comfort-item__img">
+              <picture>
+                <source srcset="./img/comfort/05-mob.webp" media="(max-width: 600px)" type="image/webp" />
+                <img loading="lazy" src="./img/comfort/05.webp" class="image" width="420" height="160" alt="" />
+              </picture>
+            </div>
+          </div>
+          <div class="comfort-item__content">
+            <div class="comfort-item__fig">05</div>
+            <div class="comfort-item__desc desc3">
+              Уникальные квартиры с отдельными входами на первом этаже
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="comfort__item comfort-item">
-        <div class="comfort-item__img">
-          <picture>
-            <source
-              srcset="./img/comfort/06-mob.webp"
-              media="(max-width: 600px)"
-              type="image/webp"
-            />
-            <img
-              loading="lazy"
-              src="./img/comfort/06.webp"
-              class="image"
-              width="420"
-              height="160"
-              alt=""
-            />
-          </picture>
-        </div>
-        <div class="comfort-item__content">
-          <div class="comfort-item__fig">06</div>
-          <div class="comfort-item__desc desc3">
-            Удобный паркинг и круглосуточное видеонаблюдение.
+        <div class="swiper-slide comfort__item comfort-item">
+          <div class="comfort-item__img-wrap">
+            <div class="comfort-item__img">
+              <picture>
+                <source srcset="./img/comfort/06-mоб.webp" media="(max-width: 600px)" type="image/webp" />
+                <img loading="lazy" src="./img/comfort/06.webp" class="image" width="420" height="160" alt="" />
+              </picture>
+            </div>
+          </div>
+          <div class="comfort-item__content">
+            <div class="comfort-item__fig">06</div>
+            <div class="comfort-item__desc desc3">
+              Удобный паркинг и круглосуточное видеонаблюдение.
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="comfort__item comfort-item">
-        <div class="comfort-item__img">
-          <picture>
-            <source
-              srcset="./img/comfort/07-mob.webp"
-              media="(max-width: 600px)"
-              type="image/webp"
-            />
-            <img
-              loading="lazy"
-              src="./img/comfort/07.webp"
-              class="image"
-              width="420"
-              height="160"
-              alt=""
-            />
-          </picture>
-        </div>
-        <div class="comfort-item__content">
-          <div class="comfort-item__fig">07</div>
-          <div class="comfort-item__desc desc3">
-            Современные детские и спортивные площадки, продуманное озеленение.
+        <div class="swiper-slide comfort__item comfort-item">
+          <div class="comfort-item__img-wrap">
+            <div class="comfort-item__img">
+              <picture>
+                <source srcset="./img/comfort/07-mob.webp" media="(max-width: 600px)" type="image/webp" />
+                <img loading="lazy" src="./img/comfort/07.webp" class="image" width="420" height="160" alt="" />
+              </picture>
+            </div>
+          </div>
+          <div class="comfort-item__content">
+            <div class="comfort-item__fig">07</div>
+            <div class="comfort-item__desc desc3">
+              Современные детские и спортивные площадки, продуманное озеленение.
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="comfort__item comfort-item">
-        <div class="comfort-item__img">
-          <picture>
-            <source
-              srcset="./img/comfort/08-mob.webp"
-              media="(max-width: 600px)"
-              type="image/webp"
-            />
-            <img
-              loading="lazy"
-              src="./img/comfort/08.webp"
-              class="image"
-              width="420"
-              height="160"
-              alt=""
-            />
-          </picture>
-        </div>
-        <div class="comfort-item__content">
-          <div class="comfort-item__fig">08</div>
-          <div class="comfort-item__desc desc3">
-            Дизайнерская отделка мест общего пользования.
+        <div class="swiper-slide comfort__item comfort-item">
+          <div class="comfort-item__img-wrap">
+            <div class="comfort-item__img">
+              <picture>
+                <source srcset="./img/comfort/08-mob.webp" media="(max-width: 600px)" type="image/webp" />
+                <img loading="lazy" src="./img/comfort/08.webp" class="image" width="420" height="160" alt="" />
+              </picture>
+            </div>
+          </div>
+          <div class="comfort-item__content">
+            <div class="comfort-item__fig">08</div>
+            <div class="comfort-item__desc desc3">
+              Дизайнерская отделка мест общего пользования.
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</section>
- <section class="possible">
+</section> <section class="possible">
   <div class="container">
     <div class="possible__header">
       <h2 class="title-xl possible__title">простор возможностей</h2>
@@ -1140,7 +1084,7 @@
 </section>
  <section class="faq">
   <div class="container">
-    <h2 class="title-xl faq__title centered">Ответы на вопросы</h2>
+    <h2 class="title-xl faq__title centered">Ответы на&nbsp;вопросы</h2>
 
     <div class="faq__items">
       <div class="faq__col">
@@ -1148,13 +1092,7 @@
           <div class="faq-item__header">
             <p class="faq-item__capture desc1">Вопрос?</p>
             <button class="faq-item__btn btn-reset">
-              <svg
-                width="28"
-                height="17"
-                viewBox="0 0 28 17"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              <svg width="28" height="17" viewBox="0 0 28 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M26 2.5L14 14.5L2 2.5" stroke-width="3" />
               </svg>
             </button>
@@ -1173,13 +1111,7 @@
           <div class="faq-item__header">
             <p class="faq-item__capture desc1">Вопрос?</p>
             <button class="faq-item__btn btn-reset">
-              <svg
-                width="28"
-                height="17"
-                viewBox="0 0 28 17"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              <svg width="28" height="17" viewBox="0 0 28 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M26 2.5L14 14.5L2 2.5" stroke-width="3" />
               </svg>
             </button>
@@ -1200,13 +1132,7 @@
           <div class="faq-item__header">
             <p class="faq-item__capture desc1">Вопрос?</p>
             <button class="faq-item__btn btn-reset">
-              <svg
-                width="28"
-                height="17"
-                viewBox="0 0 28 17"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              <svg width="28" height="17" viewBox="0 0 28 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M26 2.5L14 14.5L2 2.5" stroke-width="3" />
               </svg>
             </button>
@@ -1225,13 +1151,7 @@
           <div class="faq-item__header">
             <p class="faq-item__capture desc1">Вопрос?</p>
             <button class="faq-item__btn btn-reset">
-              <svg
-                width="28"
-                height="17"
-                viewBox="0 0 28 17"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              <svg width="28" height="17" viewBox="0 0 28 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M26 2.5L14 14.5L2 2.5" stroke-width="3" />
               </svg>
             </button>

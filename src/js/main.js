@@ -1,6 +1,5 @@
 import "./_components.js";
 
-// Логика для скрытия/показа header при скролле
 (function () {
   const header = document.querySelector(".header");
   if (!header) return;

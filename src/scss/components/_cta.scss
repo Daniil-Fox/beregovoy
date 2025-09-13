@@ -1,27 +1,65 @@
 .cta {
   padding: 9.5rem 0;
   padding-bottom: 15.4rem;
+  @include mobile {
+    padding-bottom: 18rem;
+  }
   &__container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      margin: 0 calc(-1 * var(--container-offset));
+    }
   }
 
   &__content {
     padding: 9.2rem 10rem 10rem;
     background-color: var(--bereg-white);
+
+    @include mobile {
+      padding: 4.5rem 3rem;
+      padding-bottom: 4rem;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: calc(100% - 1px);
+        height: 3rem;
+        width: 100%;
+        background-color: var(--bereg-white);
+        mask-image: url("./../img/svg/more-mask-mob.svg");
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: right bottom;
+        transform: rotateY(180deg);
+      }
+    }
   }
 
   &__title {
     margin-bottom: 3.4rem;
+    @include mobile {
+      margin-bottom: 1.5rem;
+    }
   }
   &__desc {
     margin: 0;
     font-weight: 400;
     margin-bottom: 4rem;
+    @include mobile {
+      margin-bottom: 2rem;
+    }
   }
 
   &__form {
     margin-bottom: 4.8rem;
+    @include mobile {
+      margin-bottom: 2.8rem;
+    }
   }
 
   &__extra {
@@ -29,6 +67,12 @@
     font-weight: 400;
     p {
       margin: 0;
+
+      @include mobile {
+        &:first-child {
+          font-weight: 600;
+        }
+      }
     }
     a {
       color: inherit;
@@ -40,5 +84,8 @@
 
   &__map {
     background-color: #ccc;
+    @include mobile {
+      height: 48rem;
+    }
   }
 }

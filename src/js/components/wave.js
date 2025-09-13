@@ -49,7 +49,7 @@
     const maxShiftPx = elementWidth;
 
     // Map cursor progress to element shift (-maxShiftPx/2 to +maxShiftPx/2)
-    return (cursorProgress - 0.2) * maxShiftPx;
+    return (cursorProgress - 0.2) * maxShiftPx * 2;
   };
 
   const visible = new Set();
@@ -68,26 +68,40 @@
 
   waves.forEach((el) => io.observe(el));
 
-  const onPointerMove = throttle((e) => {
-    if (visible.size === 0) return;
+  const applyWaveTransform = (clientX) => {
     visible.forEach((el) => {
-      const shift = computeShiftFromClientX(el, e.clientX);
+      const shift = computeShiftFromClientX(el, clientX);
       el.style.transform = `translate3d(${shift.toFixed(2)}px, 0, 0)`;
     });
+  };
+
+  const resetWaveTransform = () => {
+    waves.forEach((el) => {
+      el.style.transform = "";
+    });
+  };
+
+  const onPointerMove = throttle((e) => {
+    if (window.innerWidth <= 600) return;
+    if (visible.size === 0) return;
+    applyWaveTransform(e.clientX);
   }, 16); // ~60fps max
 
   // Initialize from element centers
-  (() => {
+  const initializeWaves = () => {
+    if (window.innerWidth <= 600) {
+      resetWaveTransform();
+      return;
+    }
     const documentWidth = Math.max(
       1,
       window.innerWidth || document.documentElement.clientWidth
     );
     const centerX = documentWidth / 2;
-    waves.forEach((el) => {
-      const shift = computeShiftFromClientX(el, centerX);
-      el.style.transform = `translate3d(${shift.toFixed(2)}px, 0, 0)`;
-    });
-  })();
+    applyWaveTransform(centerX);
+  };
+
+  initializeWaves();
 
   window.addEventListener("pointermove", onPointerMove, { passive: true });
   window.addEventListener("resize", () => {
@@ -95,7 +109,7 @@
       1,
       window.innerWidth || document.documentElement.clientWidth
     );
-    const centerX = documentWidth / 2;
+    const centerX = documentWidth;
     waves.forEach((el) => {
       const shift = computeShiftFromClientX(el, centerX);
       el.style.transform = `translate3d(${shift.toFixed(2)}px, 0, 0)`;

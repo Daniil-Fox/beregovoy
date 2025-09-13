@@ -3,25 +3,43 @@
   padding-top: 5.6rem;
   background-color: var(--bereg-white);
   position: relative;
+
+  @include mobile {
+    padding: 4.6rem 0;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: calc(100% - 1px);
+      height: 3rem;
+      width: 100%;
+      background-color: var(--bereg-white);
+      mask-image: url("./../img/svg/more-mask-mob.svg");
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      mask-position: right bottom;
+      transform: rotateY(180deg);
+    }
+  }
   & > svg {
     position: absolute;
-    right: 30rem;
+    left: -40rem;
     bottom: calc(100% - 1px);
     width: 100%;
     height: 3.6rem;
-
-    // mask-image: url("./../img/svg/footer-mask.svg");
-    // mask-size: contain;
-    // mask-position: bottom right;
-    // mask-repeat: no-repeat;
-    // background-color: var(--bereg-white);
+    @include mobile {
+      display: none;
+    }
   }
-  @include mobile {
-    box-shadow: 0 4px 100px 0 rgba(0, 0, 0, 0.05);
-    background: var(--white);
-    padding: 3rem 0;
-    padding-bottom: 15rem;
-    border-radius: 30px 30px 0 0;
+  &__logo {
+    @include mobile {
+      font-size: 3.1rem;
+      gap: 1.1rem;
+      margin-bottom: 4.7rem;
+      svg {
+        width: 3rem;
+      }
+    }
   }
   &__container {
     display: flex;
@@ -29,12 +47,22 @@
     gap: 6rem;
     @include mobile {
       flex-direction: column;
-      gap: 4.7rem;
+      gap: 5.2rem;
     }
   }
   &__socials {
     display: flex;
     gap: 1rem;
+
+    li {
+      &:not(:last-child) {
+        margin-bottom: 0;
+      }
+    }
+    @include mobile {
+      gap: 2rem;
+      margin-bottom: 4.5rem;
+    }
   }
   &__left {
     display: flex;
@@ -84,6 +112,7 @@
     @include mobile {
       justify-content: flex-start;
       text-align: left;
+      margin-bottom: 4.4rem;
     }
     small {
       display: block;
@@ -122,6 +151,9 @@
   max-width: 55rem;
   &:not(:last-child) {
     margin-bottom: 4rem;
+    @include mobile {
+      margin-bottom: 2.5rem;
+    }
   }
   &__link {
     margin: 0;
