@@ -125,4 +125,40 @@
       width: 22%;
     }
   }
+
+  // Состояние загрузки формы
+  &.is-loading {
+    position: relative;
+    pointer-events: none;
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: 5;
+      inset: -2rem;
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(4px);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 36px;
+      height: 36px;
+      margin: -18px 0 0 -18px;
+      border-radius: 50%;
+      border: 3px solid rgba(0, 0, 0, 0.15);
+      border-top-color: var(--bereg-accent, #5b57ff);
+      animation: form-spinner 0.8s linear infinite;
+      z-index: 6;
+    }
+  }
+}
+
+@keyframes form-spinner {
+  to {
+    transform: rotate(360deg);
+  }
 }

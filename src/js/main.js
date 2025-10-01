@@ -1,5 +1,5 @@
 import "./_components.js";
-
+import { burger } from "./functions/burger.js";
 (function () {
   const header = document.querySelector(".header");
   if (!header) return;

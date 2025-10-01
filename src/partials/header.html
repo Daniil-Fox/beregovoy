@@ -46,9 +46,12 @@
         <a href="#" target="_blank" class="header__btn soc">
           <img src="./img/tel.webp" alt="" />
         </a>
-        <a href="" class="btn btn-reset header__btn btn_small">
-          Выбрать квартиру
-        </a>
+        <button
+          class="btn btn-reset header__btn btn_small"
+          data-graph-path="contact"
+        >
+          Связаться с нами
+        </button>
       </div>
       <button
         class="btn-reset burger header__burger"
@@ -59,6 +62,7 @@
         <span class="burger__line"></span>
       </button>
     </div>
+    @include('./menu.html')
   </div>
   <svg
     width="1118"

@@ -6,6 +6,7 @@
   position: relative;
   transition-property: transform;
   transition-duration: 0.3s;
+  z-index: 20;
   @include mobile {
     padding: 2rem 0;
     &::after {
@@ -26,6 +27,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
+    z-index: 4;
   }
 
   &__buttons {

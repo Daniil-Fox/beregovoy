@@ -151,7 +151,6 @@
   &:nth-child(4n + 3) {
     .g-item__content::before {
       transform: rotateY(180deg);
-      left: unset;
     }
   }
 

@@ -6,6 +6,7 @@ new Swiper(".about__slider", {
   slidesPerView: 1,
   spaceBetween: 40,
   speed: 500,
+  loop: true,
   navigation: {
     prevEl: ".about-prev",
     nextEl: ".about-next",
@@ -18,6 +19,7 @@ new Swiper(".possible__slider_main > .swiper", {
   slidesPerView: 1,
   spaceBetween: 40,
   speed: 500,
+  loop: true,
   navigation: {
     prevEl: ".poss-prev",
     nextEl: ".poss-next",
@@ -30,6 +32,7 @@ new Swiper(".possible__slider_sec  > .swiper", {
   slidesPerView: 1,
   spaceBetween: 40,
   speed: 500,
+  loop: true,
   navigation: {
     prevEl: ".poss-sec-prev",
     nextEl: ".poss-sec-next",

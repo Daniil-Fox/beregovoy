@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru" class="page">
-  <head>
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
@@ -66,9 +66,9 @@
 </head>
 
 
-  <body class="page__body">
-    <div class="site-container">
-      <header class="header">
+<body class="page__body">
+  <div class="site-container">
+    <header class="header">
   <div class="container">
     <div class="header__container">
       <a href="./" class="logo header__logo">
@@ -116,9 +116,12 @@
         <a href="#" target="_blank" class="header__btn soc">
           <img src="./img/tel.webp" alt="" />
         </a>
-        <a href="" class="btn btn-reset header__btn btn_small">
-          Выбрать квартиру
-        </a>
+        <button
+          class="btn btn-reset header__btn btn_small"
+          data-graph-path="contact"
+        >
+          Связаться с нами
+        </button>
       </div>
       <button
         class="btn-reset burger header__burger"
@@ -129,6 +132,45 @@
         <span class="burger__line"></span>
       </button>
     </div>
+    <div class="fmenu" data-menu>
+  <div class="fmenu__body">
+    <nav class="nav fmenu__nav">
+      <ul>
+        <li>
+          <a href="#">Галерея</a>
+        </li>
+        <li>
+          <a href="#">Новости</a>
+        </li>
+        <li>
+          <a href="#">Ход строительства</a>
+        </li>
+        <li>
+          <a href="#">Квартиры</a>
+        </li>
+        <li>
+          <a href="#">Контакты</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="fmenu__row">
+      <a href="#" target="_blank" class="fmenu__soc soc">
+        <img src="./img/whatsapp.webp" alt="" />
+      </a>
+      <a href="#" target="_blank" class="fmenu__soc soc">
+        <img src="./img/tel.webp" alt="" />
+      </a>
+      <button
+        class="btn btn-reset fmenu__btn btn_small"
+        data-graph-path="contact"
+      >
+        Связаться с нами
+      </button>
+    </div>
+  </div>
+</div>
+
   </div>
   <svg
     width="1118"
@@ -145,8 +187,8 @@
   </svg>
 </header>
 
-      <main class="main">
-        <section class="hero">
+    <main class="main">
+      <section class="hero">
   <div class="container">
     <h1 class="title-xxl hero__title">жилой комплекс береговой</h1>
     <div class="hero__container">
@@ -239,7 +281,7 @@
   </div>
 </section>
 
-        <section class="benefits">
+      <section class="benefits">
   <div class="container">
     <h2 class="benefits__title visually-hidden">title</h2>
     <div class="benefits__items">
@@ -592,8 +634,7 @@
     }
   });
 </script>
-
-        <section class="more">
+      <section class="more">
   <div class="container">
     <div class="more__header">
       <h2 class="title-xl more__title">Подробнее</h2>
@@ -809,7 +850,7 @@
   </div>
 </section>
 
-        <section class="comfort">
+      <section class="comfort">
   <div class="container">
     <div class="comfort__header">
       <h2 class="title-xl comfort__title">Комфорт на&nbsp;брегу&nbsp;залива</h2>
@@ -1042,7 +1083,7 @@
   </div>
 </section>
 
-        <section class="choice">
+      <section class="choice">
   <div class="container">
     <div class="choice__container">
       <div class="choice__content">
@@ -1171,7 +1212,7 @@
   </div>
 </section>
 
-        <section class="news">
+      <section class="news">
   <div class="container">
     <div class="news__header">
       <h2 class="title-xl news__title">последние события</h2>
@@ -1232,27 +1273,17 @@
         <form action="#" class="form cta__form">
           <div class="form__field">
             <div class="form__field-wrapper">
-              <input
-                id="name"
-                type="text"
-                class="form__input input-name"
-                name="Имя"
-              />
+              <input id="name" type="text" class="form__input input-name" name="Имя" />
               <label for="name" class="form__label">Ваше имя</label>
             </div>
           </div>
           <div class="form__field">
             <div class="form__field-wrapper">
-              <input
-                id="tel"
-                type="tel"
-                class="form__input input-name"
-                name="Телефон"
-              />
+              <input id="tel" type="tel" class="form__input input-tel" name="Телефон" />
               <label for="tel" class="form__label">Ваш телефон</label>
             </div>
           </div>
-          <button class="btn-reset btn btn_masked form__btn" disabled>
+          <button type="submit" class="btn-reset btn btn_masked form__btn" disabled>
             оставить заявку
           </button>
         </form>
@@ -1279,15 +1310,15 @@
     let markers = [];
     let multiRoute;
     var myMap = new ymaps.Map(
-        "#map2",
-        {
-          center: ourCompany,
-          zoom: 14,
-        },
-        {
-          searchControlProvider: "yandex#search",
-        }
-      ),
+      "#map2",
+      {
+        center: ourCompany,
+        zoom: 14,
+      },
+      {
+        searchControlProvider: "yandex#search",
+      }
+    ),
       myPlacemark = new ymaps.Placemark(
         myMap.getCenter(),
         {},
@@ -1311,8 +1342,8 @@
   });
 </script>
 
-      </main>
-      <footer class="footer">
+    </main>
+    <footer class="footer">
   <svg
     width="1690"
     height="35"
@@ -1464,6 +1495,68 @@
   });
 </script>
 
+    <div class="modal graph-modal" id="modal-question">
+  <div class="graph-modal__container modal__container" role="dialog" aria-modal="true" data-graph-target="contact">
+
+    <div class="graph-modal__content modal__inner">
+      <div class="graph-modal__header">
+        <h2 class="title-xl modal__title">Связаться с&nbsp;нами</h2>
+        <button class="btn-reset js-modal-close graph-modal__close modal__close" aria-label="Закрыть модальное окно">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 2L22 22M22 2L2 22" stroke-width="3" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+      <p class="desc2 modal__desc">
+        Оставьте свои контактные данные, и мы свяжемся с&nbsp;вами в ближайшее время.
+      </p>
+
+      <form action="#" class="form modal__form">
+        <div class="form__field">
+          <div class="form__field-wrapper">
+            <input id="modal-name" type="text" class="form__input input-name" name="Имя" />
+            <label for="modal-name" class="form__label">Укажите ваше имя</label>
+          </div>
+        </div>
+        <div class="form__field">
+          <div class="form__field-wrapper">
+            <input id="modal-tel" type="tel" class="form__input input-tel" name="Телефон" />
+            <label for="modal-tel" class="form__label">Ваш контактный телефон</label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-reset btn form__btn" disabled>
+          Оставить заявку
+        </button>
+
+        <p class="desc3 modal__policy">
+          Нажимая кнопку «Отправить заявку», вы соглашаетесь с политикой
+          обработки
+          <a href="#" class="link-btn">персональных данных</a>
+        </p>
+      </form>
+
+      <div class="modal__content visually-hidden"></div>
     </div>
-  </body>
+  </div>
+</div>
+
+<div class="modal graph-modal" id="modal-thx">
+  <div class="graph-modal__container modal__container" role="dialog" aria-modal="true" data-graph-target="success">
+    <div class="graph-modal__content modal__inner">
+      <div class="graph-modal__header">
+        <h2 class="title-xl modal__title">Спасибо!</h2>
+        <button class="btn-reset js-modal-close graph-modal__close modal__close" aria-label="Закрыть модальное окно">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 2L22 22M22 2L2 22" stroke-width="3" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+      <p class="desc2 modal__desc">Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.</p>
+    </div>
+  </div>
+</div>
+  </div>
+</body>
+
 </html>

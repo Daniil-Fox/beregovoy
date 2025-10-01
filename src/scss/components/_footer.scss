@@ -133,13 +133,10 @@
 .footer__nav {
   display: flex;
   gap: 4.3rem;
-  .nav__list {
+  ul {
     flex-direction: column;
     align-items: flex-start;
     gap: 1.5rem;
-  }
-  .nav__link {
-    font-weight: 500;
   }
 }
 

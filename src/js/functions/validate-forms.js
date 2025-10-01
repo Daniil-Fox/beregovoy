@@ -156,29 +156,86 @@ export const validateForms = (selector, rules, checkboxes = [], afterSend) => {
 
   validation.onSuccess((ev) => {
     let formData = new FormData(ev.target);
+    // Включаем индикатор загрузки на форме
+    ev.target.classList.add("is-loading");
 
-    let xhr = new XMLHttpRequest();
+    // Пакуем данные под Macroserver API
+    const name = formData.get("Имя") || formData.get("name") || "";
+    const phone = formData.get("Телефон") || formData.get("phone") || "";
+    const email = formData.get("Email") || formData.get("email") || "";
+    const message = formData.get("Сообщение") || formData.get("message") || "";
+    const action = ev.target.getAttribute("data-form-id") || "request";
+    const channel_medium =
+      ev.target.getAttribute("data-channel") || "Форма на сайте";
 
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState === 4) {
-        if (xhr.status === 200) {
-          if (afterSend) {
-            afterSend();
-          }
-          console.log("Отправлено");
-        }
-      }
+    const macroParams = {
+      name,
+      phone,
+      ...(email ? { email } : {}),
+      ...(message ? { message } : {}),
+      action,
+      channel_medium,
     };
-    const path = location.origin + "/wp-content/themes/vovse/assets/mail.php";
-    xhr.open("POST", path, true);
-    xhr.send(formData);
 
-    ev.target.reset();
+    const finalizeSuccess = () => {
+      // снимаем лоадер
+      ev.target.classList.remove("is-loading");
+      // ресет формы
+      ev.target.reset();
+      // чистим filled
+      const fieldsWrappers = ev.target.querySelectorAll(".form__field");
+      fieldsWrappers.forEach((field) => field.classList.remove("filled"));
+      // дизейблим кнопку
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.classList.add("btn--disabled");
+      }
+      if (afterSend) afterSend();
+    };
 
-    // Сбрасываем состояние кнопки после отправки
-    if (submitButton) {
-      submitButton.disabled = true;
-      submitButton.classList.add("btn--disabled");
+    const finalizeError = (msg) => {
+      console.error("Send error:", msg);
+      ev.target.classList.remove("is-loading");
+      // здесь можно показать тост/модалку ошибки
+    };
+
+    try {
+      if (
+        window.macrocrm &&
+        typeof window.macrocrm.send_request === "function"
+      ) {
+        window.macrocrm.send_request(
+          macroParams,
+          function (response) {
+            if (response && response.success) {
+              finalizeSuccess();
+            } else {
+              finalizeError(response && response.message);
+            }
+          },
+          function (response) {
+            finalizeError(response && response.message);
+          }
+        );
+      } else {
+        // Фолбэк на почтовый обработчик, если macrocrm не подключен
+        let xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              finalizeSuccess();
+            } else {
+              finalizeError(xhr.status);
+            }
+          }
+        };
+        const path =
+          location.origin + "/wp-content/themes/beregovoy/assets/mail.php";
+        xhr.open("POST", path, true);
+        xhr.send(formData);
+      }
+    } catch (e) {
+      finalizeError(e);
     }
   });
 };

@@ -25,3 +25,9 @@
 @import "./components/single";
 @import "./components/building";
 @import "./components/contacts";
+@import "./components/modal";
+@import "./components/menu";
+
+.just-validate-error-label {
+  display: none;
+}

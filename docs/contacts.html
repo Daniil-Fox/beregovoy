@@ -116,9 +116,12 @@
         <a href="#" target="_blank" class="header__btn soc">
           <img src="./img/tel.webp" alt="" />
         </a>
-        <a href="" class="btn btn-reset header__btn btn_small">
-          Выбрать квартиру
-        </a>
+        <button
+          class="btn btn-reset header__btn btn_small"
+          data-graph-path="contact"
+        >
+          Связаться с нами
+        </button>
       </div>
       <button
         class="btn-reset burger header__burger"
@@ -129,6 +132,45 @@
         <span class="burger__line"></span>
       </button>
     </div>
+    <div class="fmenu" data-menu>
+  <div class="fmenu__body">
+    <nav class="nav fmenu__nav">
+      <ul>
+        <li>
+          <a href="#">Галерея</a>
+        </li>
+        <li>
+          <a href="#">Новости</a>
+        </li>
+        <li>
+          <a href="#">Ход строительства</a>
+        </li>
+        <li>
+          <a href="#">Квартиры</a>
+        </li>
+        <li>
+          <a href="#">Контакты</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="fmenu__row">
+      <a href="#" target="_blank" class="fmenu__soc soc">
+        <img src="./img/whatsapp.webp" alt="" />
+      </a>
+      <a href="#" target="_blank" class="fmenu__soc soc">
+        <img src="./img/tel.webp" alt="" />
+      </a>
+      <button
+        class="btn btn-reset fmenu__btn btn_small"
+        data-graph-path="contact"
+      >
+        Связаться с нами
+      </button>
+    </div>
+  </div>
+</div>
+
   </div>
   <svg
     width="1118"
@@ -158,7 +200,10 @@
     <div class="contacts__header">
       <h1 class="title-xml contacts__title">Контакты</h1>
 
-      <button class="btn-reset btn btn_masked contacts__btn">
+      <button
+        class="btn-reset btn btn_masked contacts__btn"
+        data-graph-path="modal-meeting"
+      >
         записаться на встречу
       </button>
     </div>
@@ -172,9 +217,14 @@
               <a href="tel:+79140688448" class="link-btn">+7 914 068 84 48</a>
             </p>
             <p>
-              <a href="mailto:sz-beregovoi@mail.ru" class="link-btn">sz-beregovoi@mail.ru</a>
+              <a href="mailto:sz-beregovoi@mail.ru" class="link-btn"
+                >sz-beregovoi@mail.ru</a
+              >
             </p>
-            <p>Боль­шой ка­мень, ул.&nbsp;Кар­ла&nbsp;Мар­кса,&nbsp;д.31,&nbsp;офис 1</p>
+            <p>
+              Боль­шой ка­мень,
+              ул.&nbsp;Кар­ла&nbsp;Мар­кса,&nbsp;д.31,&nbsp;офис 1
+            </p>
           </address>
         </div>
         <div class="contacts__map" id="map3"></div>
@@ -184,8 +234,8 @@
           <p class="contacts__capture subtitle-xl">расположение жк</p>
           <address class="contacts__address desc2">
             <p>
-              Приморский край, Надеждинский район,
-              пос.&nbsp;Тавричанка, ул.&nbsp;60&nbsp;лет&nbsp;ВЛКСМ
+              Приморский край, Надеждинский район, пос.&nbsp;Тавричанка,
+              ул.&nbsp;60&nbsp;лет&nbsp;ВЛКСМ
             </p>
           </address>
         </div>
@@ -199,15 +249,15 @@
   ymaps.ready(function () {
     const ourCompany = [43.109836, 132.349806];
     const myMap = new ymaps.Map(
-      "map3",
-      {
-        center: ourCompany,
-        zoom: 16,
-      },
-      {
-        searchControlProvider: "yandex#search",
-      }
-    ),
+        "map3",
+        {
+          center: ourCompany,
+          zoom: 16,
+        },
+        {
+          searchControlProvider: "yandex#search",
+        }
+      ),
       myPlacemark = new ymaps.Placemark(
         myMap.getCenter(),
         {},
@@ -413,6 +463,83 @@
   });
 </script>
 
+    </div>
+    <div class="modal graph-modal" id="modal-meeting">
+      <div
+        class="graph-modal__container modal__container"
+        role="dialog"
+        aria-modal="true"
+        data-graph-target="contact"
+      >
+        <div class="graph-modal__content modal__inner">
+          <div class="graph-modal__header">
+            <h2 class="title-xl modal__title">записаться на&nbsp;встречу</h2>
+            <button
+              class="btn-reset js-modal-close graph-modal__close modal__close"
+              aria-label="Закрыть модальное окно"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2 2L22 22M22 2L2 22"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </button>
+          </div>
+          <p class="desc2 modal__desc">
+            Оставьте свои контактные данные, и мы свяжемся с&nbsp;вами в
+            ближайшее время.
+          </p>
+
+          <form action="#" class="form modal__form">
+            <div class="form__field">
+              <div class="form__field-wrapper">
+                <input
+                  id="modal-name3"
+                  type="text"
+                  class="form__input input-name"
+                  name="Имя"
+                />
+                <label for="modal-name3" class="form__label"
+                  >Укажите ваше имя</label
+                >
+              </div>
+            </div>
+            <div class="form__field">
+              <div class="form__field-wrapper">
+                <input
+                  id="modal-tel3"
+                  type="tel"
+                  class="form__input input-tel"
+                  name="Телефон"
+                />
+                <label for="modal-tel3" class="form__label"
+                  >Ваш контактный телефон</label
+                >
+              </div>
+            </div>
+
+            <button type="submit" class="btn-reset btn form__btn" disabled>
+              Оставить заявку
+            </button>
+
+            <p class="desc3 modal__policy">
+              Нажимая кнопку «Отправить заявку», вы соглашаетесь с политикой
+              обработки
+              <a href="#" class="link-btn">персональных данных</a>
+            </p>
+          </form>
+
+          <div class="modal__content visually-hidden"></div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

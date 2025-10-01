@@ -1,0 +1,63 @@
+.graph-modal {
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+  }
+}
+
+.modal {
+  &__close {
+    position: static;
+    width: 2rem;
+    height: 2rem;
+    flex-shrink: 0;
+    background: none;
+    color: var(--bereg-black);
+    transition: color 0.3s ease-in;
+
+    @include hover {
+      color: var(--bereg-accent);
+    }
+
+    svg {
+      stroke: currentColor;
+    }
+  }
+  &__container {
+    display: block;
+    border-radius: 0;
+    padding: 6rem;
+    max-width: 105rem;
+  }
+  &__desc {
+    margin: 0;
+    margin-bottom: 4rem;
+  }
+  &__policy {
+    margin: 0;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 120%;
+    color: #000;
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+    }
+  }
+  &__form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+    .form__field {
+      &:not(:last-child) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

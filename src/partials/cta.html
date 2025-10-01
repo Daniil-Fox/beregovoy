@@ -10,27 +10,17 @@
         <form action="#" class="form cta__form">
           <div class="form__field">
             <div class="form__field-wrapper">
-              <input
-                id="name"
-                type="text"
-                class="form__input input-name"
-                name="Имя"
-              />
+              <input id="name" type="text" class="form__input input-name" name="Имя" />
               <label for="name" class="form__label">Ваше имя</label>
             </div>
           </div>
           <div class="form__field">
             <div class="form__field-wrapper">
-              <input
-                id="tel"
-                type="tel"
-                class="form__input input-name"
-                name="Телефон"
-              />
+              <input id="tel" type="tel" class="form__input input-tel" name="Телефон" />
               <label for="tel" class="form__label">Ваш телефон</label>
             </div>
           </div>
-          <button class="btn-reset btn btn_masked form__btn" disabled>
+          <button type="submit" class="btn-reset btn btn_masked form__btn" disabled>
             оставить заявку
           </button>
         </form>
@@ -57,15 +47,15 @@
     let markers = [];
     let multiRoute;
     var myMap = new ymaps.Map(
-        "#map2",
-        {
-          center: ourCompany,
-          zoom: 14,
-        },
-        {
-          searchControlProvider: "yandex#search",
-        }
-      ),
+      "#map2",
+      {
+        center: ourCompany,
+        zoom: 14,
+      },
+      {
+        searchControlProvider: "yandex#search",
+      }
+    ),
       myPlacemark = new ymaps.Placemark(
         myMap.getCenter(),
         {},

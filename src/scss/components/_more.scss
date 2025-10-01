@@ -33,14 +33,48 @@
     justify-content: center;
     flex-shrink: 0;
     background-color: var(--bereg-white);
+    transition-property: background-color;
+    transition-duration: 0.3s;
     svg {
       width: 1.2rem;
       height: 2rem;
       stroke: #050220;
+      transition-property: stroke;
+      transition-duration: 0.3s;
     }
 
     &--next {
       transform: rotateY(180deg);
+    }
+
+    @include hover {
+      background-color: var(--btn-hover);
+      svg {
+        stroke: var(--bereg-white);
+      }
+    }
+    &:focus-visible {
+      outline: none;
+      background-color: var(--btn-hover);
+
+      svg {
+        stroke: var(--bereg-white);
+      }
+    }
+
+    &:active {
+      background-color: var(--bereg-accent);
+
+      svg {
+        stroke: var(--bereg-white);
+      }
+    }
+
+    &:disabled {
+      background-color: #e5e5e5;
+      svg {
+        stroke: #bebebe;
+      }
     }
   }
 

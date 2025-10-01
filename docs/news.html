@@ -116,9 +116,12 @@
         <a href="#" target="_blank" class="header__btn soc">
           <img src="./img/tel.webp" alt="" />
         </a>
-        <a href="" class="btn btn-reset header__btn btn_small">
-          Выбрать квартиру
-        </a>
+        <button
+          class="btn btn-reset header__btn btn_small"
+          data-graph-path="contact"
+        >
+          Связаться с нами
+        </button>
       </div>
       <button
         class="btn-reset burger header__burger"
@@ -129,6 +132,45 @@
         <span class="burger__line"></span>
       </button>
     </div>
+    <div class="fmenu" data-menu>
+  <div class="fmenu__body">
+    <nav class="nav fmenu__nav">
+      <ul>
+        <li>
+          <a href="#">Галерея</a>
+        </li>
+        <li>
+          <a href="#">Новости</a>
+        </li>
+        <li>
+          <a href="#">Ход строительства</a>
+        </li>
+        <li>
+          <a href="#">Квартиры</a>
+        </li>
+        <li>
+          <a href="#">Контакты</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="fmenu__row">
+      <a href="#" target="_blank" class="fmenu__soc soc">
+        <img src="./img/whatsapp.webp" alt="" />
+      </a>
+      <a href="#" target="_blank" class="fmenu__soc soc">
+        <img src="./img/tel.webp" alt="" />
+      </a>
+      <button
+        class="btn btn-reset fmenu__btn btn_small"
+        data-graph-path="contact"
+      >
+        Связаться с нами
+      </button>
+    </div>
+  </div>
+</div>
+
   </div>
   <svg
     width="1118"
@@ -247,27 +289,17 @@
         <form action="#" class="form cta__form">
           <div class="form__field">
             <div class="form__field-wrapper">
-              <input
-                id="name"
-                type="text"
-                class="form__input input-name"
-                name="Имя"
-              />
+              <input id="name" type="text" class="form__input input-name" name="Имя" />
               <label for="name" class="form__label">Ваше имя</label>
             </div>
           </div>
           <div class="form__field">
             <div class="form__field-wrapper">
-              <input
-                id="tel"
-                type="tel"
-                class="form__input input-name"
-                name="Телефон"
-              />
+              <input id="tel" type="tel" class="form__input input-tel" name="Телефон" />
               <label for="tel" class="form__label">Ваш телефон</label>
             </div>
           </div>
-          <button class="btn-reset btn btn_masked form__btn" disabled>
+          <button type="submit" class="btn-reset btn btn_masked form__btn" disabled>
             оставить заявку
           </button>
         </form>
@@ -294,15 +326,15 @@
     let markers = [];
     let multiRoute;
     var myMap = new ymaps.Map(
-        "#map2",
-        {
-          center: ourCompany,
-          zoom: 14,
-        },
-        {
-          searchControlProvider: "yandex#search",
-        }
-      ),
+      "#map2",
+      {
+        center: ourCompany,
+        zoom: 14,
+      },
+      {
+        searchControlProvider: "yandex#search",
+      }
+    ),
       myPlacemark = new ymaps.Placemark(
         myMap.getCenter(),
         {},

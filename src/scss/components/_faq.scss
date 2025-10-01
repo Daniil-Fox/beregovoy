@@ -89,6 +89,7 @@
     color: var(--bereg-black);
     font-size: 2rem;
     font-weight: 300;
+    line-height: 150%;
     @include mobile {
       font-size: 1.8rem;
     }

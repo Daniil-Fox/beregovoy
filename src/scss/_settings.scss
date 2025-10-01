@@ -28,6 +28,26 @@
   background-color: #f7f7f7;
   display: flex;
   flex-direction: column;
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 15;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(#000, 0.3);
+    backdrop-filter: blur(3px);
+    transition: opacity 0.2s ease-in;
+    pointer-events: none;
+    opacity: 0;
+  }
+  &.open-menu {
+    overflow: hidden;
+    &::after {
+      opacity: 1;
+    }
+  }
 }
 
 img {

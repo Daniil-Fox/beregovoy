@@ -98,10 +98,10 @@
     }
     &::after {
       width: 23.7%;
-      height: 0.8rem;
+      height: 0.6rem;
       mask-image: url("./../img/svg/more-btn-mask.svg");
-      mask-size: contain;
-      mask-position: top;
+      mask-size: cover;
+      mask-position: left top;
     }
   }
 }
